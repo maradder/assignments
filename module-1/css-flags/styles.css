@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    justify-content: space-around;
+    height: auto;
+    width: 100vw;
+    padding: 30px;
+    background-color: #27293D;
+}
+
+.flags {
+    display: flex;
+
+}
+
+/* France */
+#france {
+    display: grid;
+    min-height: 200px;
+    min-width: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas: "b w r";
+}
+
+#france .column-1 {
+    grid-area: b;
+    background-color: #002495;
+}
+
+#france .column-2 {
+    grid-area: w;
+    background-color: #FFFFFF;
+}
+
+#france .column-3 {
+    grid-area: r;
+    background-color: #ED2938;
+}
+
+#germany {
+    display: grid;
+    min-height: 200px;
+    min-width: 333.3px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-columns: 1fr;
+    grid-template-areas: "b"
+                         "r" 
+                         "y";
+}
+
+/* Germany */
+#germany .row-1 {
+    grid-area: b;
+    background-color: #000000;
+}
+
+#germany .row-2 {
+    grid-area: r;
+    background-color: #DE0002;
+}
+
+#germany .row-3 {
+    grid-area: y;
+    background-color: #FFCE00;
+}
+
+/* Madagascar */
+#madagascar {
+    display: grid;
+    min-height: 200px;
+    min-width: 300px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "w r r"
+                         "w g g"; 
+}
+
+#madagascar .column-1 {
+    grid-area: w;
+    background-color: #FFFFFF;
+}
+
+#madagascar .row-1 {
+    grid-area: r;
+    background-color: #FC3E32;
+}
+
+#madagascar .row-2 {
+    grid-area: g;
+    background-color: #007E39;
+}
+
+
+/* Switzerland */
+#switzerland {
+    display: grid;
+    min-height: 200px;
+    min-width: 200px;
+    grid-template-rows: 6fr 7fr 6fr 7fr 6fr;
+    grid-template-columns: 6fr 7fr 6fr 7fr 6fr;
+    grid-template-areas: ". . . . ."
+                         ". . t . ."
+                         ". x x x ."
+                         ". . b . ."
+                         ". . . . .";
+    background-color: #FF0002; 
+}
+
+#switzerland .field {
+    grid-area: t;
+    background-color: #FFFFFF;
+}
+
+#switzerland .inner-x {
+    grid-area: x;
+    background-color: #FFFFFF;
+}
+
+#switzerland .inner-y {
+    grid-area: b;
+    background-color: #FFFFFF;
+}
+
+/* https://www.crwflags.com/fotw/images/s/se-dimen.gif */
+
+/* Sweden */
+#sweden {
+    display: grid;
+    min-height: 200px;
+    min-width: 320px;
+    grid-template-rows: 4fr 2fr 4fr;
+    grid-template-columns: 5fr 2fr 9fr;
+    grid-template-areas: ".   y-1    ."
+                         "y-2 y-1 y-3 "
+                         ".   y-1    .";
+    background-color: #0269A6; 
+}
+
+#sweden .yellow-1 {
+    grid-area: y-1;
+    background-color: #FECC00;
+}
+
+#sweden .yellow-2 {
+    grid-area: y-2;
+    background-color: #FECC00;
+}
+
+#sweden .yellow-3 {
+    grid-area: y-3;
+    background-color: #FECC00;
+}
+
+/* Gambia */
+#gambia {
+    display: grid;
+    min-height: 200px;
+    min-width: 300px;
+    grid-template-rows: 6fr 1fr 4fr 1fr 6fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "r"
+                         "."
+                         "b"
+                         "." 
+                         "g";
+    background-color: #ffffff;
+}
+
+#gambia .row-1 {
+    grid-area: r;
+    background-color: #CE1127;
+}
+
+#gambia .row-2 {
+    grid-area: b;
+    background-color: #0D1D8B;
+}
+
+#gambia .row-3 {
+    grid-area: g;
+    background-color: #3B7827;
+}
+
+/* Japan */
+#japan {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    min-height: 200px;
+    min-width: 300px;
+    background-color: #ffffff;
+}
+
+
+#japan .disc {
+    display: flex;
+    height: 120px;
+    width: 120px;
+    background-color: #BC022C;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* Niger */
+#niger {
+    display: grid;
+    min-height: 200px;
+    min-width: 233.3px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-columns: 1fr;
+    grid-template-areas: "o"
+                         "w" 
+                         "g";
+}
+
+#niger .row-1 {
+    grid-area: o;
+    background-color: #E15307;
+}
+
+
+
+#niger .row-2 {
+    grid-area: w;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#niger .row-3 {
+    grid-area: g;
+    background-color: #10AF2A;
+}
+
+#niger .row-2 .disc {
+    display: flex;
+    height: 47px;
+    width: 47px;
+    background-color: #E15307;
+    border-radius: 50%;
+    margin: auto;
+}

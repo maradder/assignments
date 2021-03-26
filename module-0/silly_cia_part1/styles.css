@@ -1,0 +1,20 @@
+html * {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+h2 {
+    font-weight: 900;
+}
+
+span.bold {
+    font-weight: 1000;
+}

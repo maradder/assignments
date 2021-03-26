@@ -1,0 +1,42 @@
+/* Select the body and give it a background color of #111111. */
+body {
+    background-color: #111111;
+}
+
+/* Select the h1 tag, change the font color to #E2E80F, center the text, and make it a bit larger than the default. */
+h1 {
+    color: #e2e80f;
+    align-content: center;
+    font-size: larger;
+}
+
+/* Select the paragraphs, change the font-color to #eeeeee, make their font-size larger,
+ and give them some larger separation between each line; */
+
+p {
+    color: #eeeeee;
+    font-size: larger;
+    line-height: 125%;
+}
+
+/* Select all span tags inside the paragraph with the class of credits and make them look like anchor links 
+(i.e. underline and colored blue, or another color that is easier to read on the dark background like #49DAFF).
+You could also optionally figure out how to make the cursor change to the little hand when the user is hovering 
+over it to mimic even more closely a real link.
+ */
+
+p span.credits {
+    text-decoration-line: underline;
+    color: blue;
+}
+
+p span.credits:hover {
+    cursor: pointer;
+}
+
+/* Select the "film-description" ID, make the font a little smaller and change it to an italics style. */
+
+#film-description {
+    font-size: smaller;
+    font-style: italic;
+}
