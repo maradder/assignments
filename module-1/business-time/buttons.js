@@ -31,3 +31,14 @@ function showHamburgerMenu() {
     
 }
 
+function closeSpecialOffer() {
+    document.getElementById("specialOffer").style.transform = "translateY(-1515vh)"
+}
+
+function showOffer() {
+    document.getElementById("specialOffer").style.transform = "translateY(1515vh)"
+    // document.getElementById("specialOffer").style.top = "15vh"
+
+}
+
+setTimeout(showOffer, 2500);

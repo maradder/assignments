@@ -1,0 +1,28 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    background-color: #173742;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.social-links img {
+    max-height: 48px;
+    max-width: auto;
+    margin: 50px 25px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: 'inika', serif;
+    font-size: 16px;
+    line-height: 155%;
+    color: #ffffff;
+    margin-left: 15px;
+}

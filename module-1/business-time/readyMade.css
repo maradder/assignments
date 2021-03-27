@@ -1,0 +1,94 @@
+.headline {
+    font-size: 54px;
+    font-family: 'inika', serif;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.ready-made .gallery {
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 50px;
+    min-width: auto;
+    align-content: center;
+}
+
+.item img {
+    border-radius: 12px;
+    box-shadow: 1px 1px 30px 3px #4E1703;
+}
+
+.item h2 {
+    font-size: 36px;
+    font-family: 'inika', serif;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.item span {
+    font-size: 16px;
+    font-weight: regular;
+    color: #ffffff;
+    margin: 50px;
+    line-height: 125%;
+
+}
+
+
+.one {
+    /* background-color: lawngreen; */
+    margin-top: 50px;
+}
+
+.one img {
+    max-height: 300px;
+    margin-right: 25px;
+}
+
+.two {
+    flex-direction: row-reverse;
+    /* background-color: aquamarine; */
+}
+
+.two img {
+    max-height: 300px;
+    margin-left: 25px;
+}
+
+/* .three {
+    background-color: blue;
+} */
+
+.three img {
+    max-height: 300px;
+    margin-right: 25px;
+}
+
+.four {
+    flex-direction: row-reverse;
+    /* background-color: pink; */
+}
+
+.four img {
+    max-height: 300px;
+    margin-left: 25px;
+
+}
+/* END OF READY MADE TREATS */
+
+@media screen and (max-width: 828px) {
+  
+    .item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        min-width: auto;
+    }
+    

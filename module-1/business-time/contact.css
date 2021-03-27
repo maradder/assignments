@@ -1,0 +1,58 @@
+/* CONTACT PAGE  */
+.contact {
+    display: flex;
+    flex-direction: row ;
+}
+
+.contact > .img-container > img {
+    position: relative;
+    display: flex;
+    left: 30vw;
+    top: -50px;
+    height: 600px;
+    width: 600px;
+    transform:rotate(39deg);
+    border-radius: 100px;
+    z-index: -3;
+    box-shadow: 1px 1px 30px 3px #4E1703;
+}
+
+.phone, .email, .address {
+    font-size: 36px;
+    font-family: 'inika', serif;
+    color: #ffffff;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.contact > .details > p {
+    font-size: 16px;
+    font-family: 'montserrat', serif;
+    color: #ffffff;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.map {
+    padding: 100px;
+}
+
+.map img {
+    max-width: 100%;
+    border: 15px solid #4E1703;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.custom-made {
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.contact-page {
+    min-height: 100vh;
+    min-width: 100%;
+}

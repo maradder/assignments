@@ -3,10 +3,16 @@
 <head>
     <title>Chubby's Choco</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./specialOffer.css">
+    <link rel="stylesheet" href="./readyMade.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="./footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/ad36116b00.js" crossorigin="anonymous"></script>
 
 
@@ -14,26 +20,26 @@
 
 <body>
     <header>
-
-        <div class="left-column"></div>
-        <div class="middle-column">
-            <div class="img-container">
-                <img src="./half-cookie.png" alt="Chocolate Chip Cookie">
-            </div>
-            <div class="name">
-                <div class="company-name">Chubby’s Choco</div>
-                <div class="tagline">The Best Baked Treats Since Grandma Made ‘em</div>
-                <div class="hamburger-nav"><i class="fa fa-bars" aria-hidden="true"></i></div>
-            </div>
+        <div class="img-container">
+            <img src="./half-cookie.png" alt="Chocolate Chip Cookie">
         </div>
-        <div class="right-column">
-            <nav>
-                <a href="index.html">Everyday Favorites</a>
-                <a href="custom_order.html">Custom Treats</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
+        <div class="name">
+            <div class="company-name">Chubby’s Choco</div>
+            <div class="tagline">The Best Baked Treats Since Grandma Made ‘em</div>
+            <div class="hamburger-nav"><i class="fa fa-bars" aria-hidden="true"></i></div>
         </div>
+        <nav>
+            <a href="index.html">Everyday Favorites</a>
+            <a href="custom_order.html">Custom Treats</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
+
+    <div class="special-offer" id="specialOffer"><a onclick="closeSpecialOffer()"><i class="far fa-times-circle" id="closeSpecialOffer"></i></a>
+        <h1>Get <span>2 FREE</span> cookies <span>EVERY</span> month!</h1>
+        <h2>Join our awesome perks program to receive everyday discounts and <span>2 FREE</span> cookies <span>EVERY</span> month!</h2>
+        <button>Sign Me Up!</button>
+    </div>
 
     <div class="ready-made"><a id="ready-made"></a>
         <div class="headline">
