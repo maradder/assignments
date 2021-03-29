@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-image: url(./pexels-vishnu-r-nair-1105666.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr 1fr;
+    overflow: scroll;
+}
+
+header {
+    background-color: #753825;
+    border-bottom: 5px solid #3D1314e7;
+    height: 72px;
+    width: 100vw;
+    color: #B8A270;
+    font-size: 54px;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 200%;
+    text-shadow: 3px 3px 15px #3D1314e7;
+    box-shadow: 0 2px 9px 13px #3D1314e7;
+
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.square {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    align-self: center;
+    margin: auto;
+    border: 4px ridge #3D1314e7;
+    box-shadow: 0 0 9px 3px #3D1314e7;
+}
+
+#squareText {
+    display: flex;
+    text-align: center;
+    color: #1F1017;
+    user-select: none
+}
+
