@@ -1,0 +1,5 @@
+const numbers = [];
+for(var i = 0;i <= 9;i++){
+    numbers.push(i)
+    console.log(numbers.push(i))
+}

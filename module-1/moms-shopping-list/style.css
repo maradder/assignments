@@ -4,6 +4,7 @@
 
 .main {
     border: 1px solid black;
+    border-radius: 4px;
     width: 50%;
     margin: auto;
 }
@@ -22,6 +23,23 @@
     box-sizing: border-box;
 }
 
+#submitButton {
+    display: block;
+    margin: auto;
+    padding: 6px 25px;
+
+}
+
+button {
+    background-color: aqua;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
 .label {
     margin: 10px;
 }
@@ -37,6 +55,17 @@
 }
 
 #list div {
+    display: flex;
+    flex-direction: row-reverse;
     margin-bottom: 10px;
+    padding: 1px;
     text-align: center;
+    background-color: darkcyan;
+    border: 1px solid #121212;
+    border-radius: 4px;
+
+}
+
+.itemName {
+    margin: 0 10px;
 }

@@ -2,7 +2,6 @@ const addBtn = document.getElementById("add");
 
 addBtn.addEventListener("click", function(){
 
-    console.log("hello");
 
     // create new divs within 'list'
     const subItem = document.createElement("div");
@@ -30,14 +29,12 @@ const colors = ["red", "blue", "green"];
 function createDropDown(){
     const dropDown = document.createElement("select");
     main.appendChild(dropDown);
-    console.log('poop1');
 
     for (var i = 0; i < colors.length; i++){
         const option = document.createElement("option"); 
         option.innerHTML = colors[i];
         option.value = colors[i];
         dropDown.appendChild(option);
-        console.log('poop2')
     }
     console.dir(dropDown)
 
