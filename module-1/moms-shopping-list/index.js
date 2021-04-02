@@ -64,7 +64,7 @@ addItemInput.classList.add('input');
 addItemInput.setAttribute("name", "title");
 addItemInput.setAttribute("id", "title");
 addItemInput.setAttribute("type", "text");
-
+addItemInput.addEventListener("click", () => document.querySelector('#title').value = '');
 
 const addItemButton = document.createElement('button');
 addItemButton.setAttribute("id", "submitButton");
@@ -80,7 +80,9 @@ addItemForm.appendChild(addItemButton);
 submitButton.addEventListener("click", function(e) {
     e.preventDefault();
     addNewItemToList();
+    resetInputField();
 }); 
+// Create a listener to trigger addElement
 
 // Create the todos div
 const todosDiv = document.createElement('div');
@@ -112,10 +114,10 @@ const list = document.createElement('ul');
 list.setAttribute("id", "list");
 todosDiv.appendChild(list);
 
+const delBtn = document.createElement('button');
+
 function addNewItemToList() {
     const lineItem = document.createElement('li');
-
-
     
     const addedItem = document.createElement('div');
     lineItem.appendChild(addedItem);
@@ -123,6 +125,7 @@ function addNewItemToList() {
     const editBtn = document.createElement('button');
     editBtn.classList.add('editBtn');
     editBtn.innerHTML = "<i class='fas fa-pencil-alt'></i>";
+    editBtn.style.backgroundColor = "#121212";
     addedItem.appendChild(editBtn);
 
     const itemName = document.createElement('span');
@@ -130,15 +133,26 @@ function addNewItemToList() {
     itemName.classList.add('itemName');
     addedItem.appendChild(itemName);
 
+    var delBtn = document.createElement('button');
 
-    const delBtn = document.createElement('button');
     delBtn.classList.add('delBtn');
+    delBtn.setAttribute("id", "delBtn");
     delBtn.innerHTML = "<i class='fas fa-times'></i>";
+    delBtn.addEventListener("click", e => {  
+        e.preventDefault();
+        delItemFromList(e.target.parentNode);
+    }); 
     addedItem.appendChild(delBtn);
 
     list.appendChild(lineItem);
 }
 
 
+function delItemFromList(e) {
+    e.parentNode.remove()
+}
+
 const lineBreak3 = document.createElement('hr');
 todosDiv.appendChild(lineBreak3);
+
+

@@ -2,6 +2,9 @@
     text-align: center;
 }
 
+body {
+    overflow-y: scroll;
+}
 .main {
     border: 1px solid black;
     border-radius: 4px;
