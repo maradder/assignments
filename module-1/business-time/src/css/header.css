@@ -93,6 +93,24 @@ nav a {
     margin-top: 3px;
 }
 
+.hamburgerText {
+    font-family: sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+    display: flex; 
+    flex-direction: row;
+    text-decoration-line: none;
+    margin-bottom: 35px;
+}
+
+.hamburgerText:first {
+    margin-top: 50px;
+}
+
+.hamburgerText:hover {
+    text-shadow: 3px 3px 4px #4E1703;
+}
+
 .hamburger-nav .fa-bars {
     display: none;
 }
@@ -169,6 +187,10 @@ nav a {
         font-size: 32px;
         margin: 1rem auto;
     }
+
+    .fa-times {
+        font-size: 32px;
+    }
 }
 
 @media screen and (min-width: 828px) and (max-width: 1031px) {
@@ -199,5 +221,9 @@ nav a {
         display: block;
         font-size: 32px;
         margin: 1rem auto;
+    }
+
+    .fa-times {
+        font-size: 32px;
     }
 }

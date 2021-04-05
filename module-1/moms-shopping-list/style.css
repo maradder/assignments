@@ -6,14 +6,9 @@ body {
     overflow-y: scroll;
 }
 .main {
-    border: 1px solid black;
     border-radius: 4px;
     width: 50%;
     margin: auto;
-}
-
-#add-item {
-    border: 1px solid black;
 }
 
 .input {
@@ -21,7 +16,6 @@ body {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -34,7 +28,6 @@ body {
 }
 
 button {
-    background-color: aqua;
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
@@ -63,8 +56,6 @@ button {
     margin-bottom: 10px;
     padding: 1px;
     text-align: center;
-    background-color: darkcyan;
-    border: 1px solid #121212;
     border-radius: 4px;
 
 }
