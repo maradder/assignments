@@ -6,33 +6,37 @@ var userName = ''
 
 function whatsNext() {
     console.log("Now what would you like to do? ");
-    startTheGame();
+    makeADecision();
 }
 
-function userDies() {
-    console.log("You've died.");
-    const tryAgain = readline.question("Do you want to try again? yes/no  ");
-    if (tryAgain == "yes" || "Yes" || "y") {
+function tryAgain() {
+    var wantToTryAgain = readline.question("Do you want to try again? yes/no  ");
+    if (wantToTryAgain == "yes" || "Yes" || "y") {
         startTheGame();
     }
-    else {
+    if (wantToTryAgain == "no" || "No" || "n") {
         console.log("Thanks for playing!");
     }
 }
 
+function userDies() {
+    console.log("You've died.");
+    tryAgain();
+}
+
 function foundTheKey() {
     isKeyFound = true
-    console.log("Great!");
+    console.log("Great!  After some searching, you've found the key!");
     whatsNext();
-    return isKeyFound;
+    // return isKeyFound;
 }
 
 function isUserReadyForDoor() {
     if (isKeyFound == true) {
         console.log("Great! You've made it out of the room!");
-
+        tryAgain();
     }
-    else {
+    if (isKeyFound != true) {
         console.log("Sorry, " +  userName + "... The door can't be opened yet.");
         whatsNext();
     }
@@ -44,6 +48,11 @@ function getUserName() {
 }
 
 function startTheGame() {
+    isKeyFound = false;
+    makeADecision();
+}
+
+function makeADecision() {
     option = readline.question("What do you want to do? (1) Put your hand in the hole? (2) Find the key? Or (3) open the door? ");
     if (option == "1") {
         userDies();
@@ -58,7 +67,6 @@ function startTheGame() {
         console.log("Please choose 1, 2, or 3")
         startTheGame();
     }
-
 }
 
 function startNewGame() {

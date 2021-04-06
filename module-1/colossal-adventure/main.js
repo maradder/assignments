@@ -2,8 +2,18 @@ const readlineSync = require("readline-sync");
 
 
 // Console must greet player with a fun message
-console.log("Hello")
+// console.log("Hello")
 
+class Enemy {
+    constructor(name, hp, attackPower, drops) {
+        this.name = name;
+        this.hp = hp;
+        this.attackPower = attackPower;
+        this.drops = drops; 
+    }
+}
+
+const roboPlop = new Enemy("RoboPlop", 100, 30, "Stomp Boots");
 
 const player1 = {
                 "firstName" : '' ,
@@ -11,35 +21,9 @@ const player1 = {
                 "inventory" : [] ,
 };
 
-// Console must ask for the player's name and store it
-// player1.firstName = readlineSync.question("I hate to pry, but I must ask your name.  So tell me, what is your name? ")
+let select = readlineSync.keyIn('What would you like to do?', {limit: 'wiq'})
 
-console.log(player1)
-var rightNow = new Date();
-var seconds = rightNow.getSeconds();
-function randNumGen() {
-    var random = Math.random();
-    random = random * 100;
-    random = Math.floor(random);
-    return random;
-}
-
-function playerWalkRisk() {
-    var random = randNumGen();
-    if(random <= 25){
-        console.log("attacked")
-    }
-    else {
-        console.log("safe")
-    }
-}
-var reg = readlineSync.setDefaultOptions
-
-var items = ['Walk', 'Run', 'Attack', 'Inventory'];
-var playerKey = readlineSync.keyInSelect(items, null);
-console.log(playerKey) 
-
-// console.log(seconds);
+console.log(select);
 
 
 

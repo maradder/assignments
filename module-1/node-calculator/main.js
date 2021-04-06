@@ -32,29 +32,32 @@ var num1 = readlineSync.question("Please enter your first number: ");
 var num2 = readlineSync.question("Please enter your second number: ");
 
 // Please enter the operation to perform: add, sub, mul, div (then store the operation)
-var operation = readline
+var operation = readlineSync.question("Do you want to [1] add, [2] subtract, [3] multiply, or [4] divide? ");
 
 
 
 
 var result = 0
 
-// Based on the operation entered by the user, you will call one of your 4 functions to perform the correct operation
-if (operation == "add") {
+// Based on the operation entered by the user, you will call one of your 4 
+// functions to perform the correct operation
+if (operation == "1" || operation == "add") {
     result = sum2Num(num1, num2); 
 }
-else if (operation == "sub") {
+else if (operation == "2" || operation == "subtract") {
     result = diff2Num(num1, num2); 
 }
 
-else if (operation == "mul") {
+else if (operation == "3" || operation == "multiply") {
     result = prod2Num(num1, num2); 
 }
 
-else if (operation == "div") {
+else if (operation == "4" || operation == "divide") {
     result = div2Num(num1, num2); 
 }
 
 // You will then print to the console: The result is: [the result]
 console.log("The result is: " + result)
+
+
 
