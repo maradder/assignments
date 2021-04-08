@@ -251,3 +251,194 @@ body {
     border-radius: 50%;
     margin: auto;
 }
+
+#tonga {
+    display: grid;
+    height: 200px;
+    min-width: 400px;
+    max-width: 400px;
+    background-color: #C20002;
+    margin: auto;
+}
+
+#tonga .whiteBox {
+    display: grid;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 41.6%;
+    height: 45.8%;
+    grid-template-columns: 11fr 6fr 6fr 6fr 11fr;
+    grid-template-rows: 3fr 6fr 6fr 6fr 3fr;
+    grid-template-areas: ".  .  .   .  ."
+                         ".  .  r1  .  ."
+                         ".  r2 r1  r3 ."
+                         ".  .  r1  .  ."
+                         ".  .  .   .  .";
+}
+
+#tonga .red-1 {
+    display: grid;
+    background-color: #C20002;
+    grid-area: r1;
+}
+
+#tonga .red-2 {
+    display: grid;
+    background-color: #C20002;
+    grid-area: r2;
+}
+
+#tonga .red-3 {
+    display: grid;
+    background-color: #C20002;
+    grid-area: r3;
+}
+
+#greece {
+    display: grid;
+    grid-template-columns: repeat(13, 2fr) 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-areas: "f f . g g a a a a a a a a a"
+                         "f f . g g . . . . . . . . ."
+                         ". . . . . b b b b b b b b b"
+                         "h h . i i . . . . . . . . ."
+                         "h h . i i c c c c c c c c c"
+                         ". . . . . . . . . . . . . ."
+                         "d d d d d d d d d d d d d d"
+                         ". . . . . . . . . . . . . ."
+                         "e e e e e e e e e e e e e e";
+
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+    background-color: #ffffff;
+
+}
+
+#greece .blue {
+    display: grid;
+    background-color: #0E5FAE;
+}
+
+#greece .a {
+    display: grid;
+    grid-area: a;
+    min-width: 17fr;
+    min-height: 1fr;
+
+}   
+
+#greece .b {
+    display: grid;
+    grid-area: b;
+    min-width: 17fr;
+    min-height: 1fr;
+
+}   
+
+#greece .c {
+    grid-area: c;
+    display: grid;
+    min-width: 17fr;
+    min-height: 1fr;
+
+}   
+
+#greece .d {
+    grid-area: d;
+    display: grid;
+    min-width: 27;
+    min-height: 1fr;
+
+}   
+
+#greece .e {
+    grid-area: e;
+    display: grid;
+    min-width: 27;
+    min-height: 1fr;
+
+}   
+
+#greece .f {
+    min-width: 4fr;
+    min-height: 2fr;
+    grid-area: f;
+    display: grid;
+}   
+
+#greece .g {
+    min-width: 4fr;
+    min-height: 2fr;
+    grid-area: g;
+    display: grid;
+}   
+
+#greece .h {
+    min-width: 4fr;
+    min-height: 2fr;
+    grid-area: h;
+    display: grid;
+}   
+
+#greece .i {
+    min-width: 4fr;
+    min-height: 2fr;
+    grid-area: i;
+    display: grid;
+}
+
+#maldives {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+    background-color: #D31133;
+    padding: 50px;
+    font-size: 10px;
+}
+
+#maldives .green-rect {
+    align-items: center;
+    grid-template-columns: repeat(72, 1fr);
+    grid-template-rows: repeat(48, 1fr);
+    background-color: #007E39;
+    min-height: 100px;
+    max-width: 100px;
+    min-width: 200px;
+    max-width: 200px;
+
+}
+
+#maldives .green-circle {
+    align-self: center;
+    position: relative;
+    top: -8.4rem;
+    left: 9.2rem;
+    min-height: 66.6px;
+    max-height: 66.6px;
+    min-width: 66.6px;
+    max-width: 66.6px;
+    border-radius: 100%;
+    z-index: 3;
+    background-color: #007E39;
+}
+
+#maldives .white-circle {
+    position: relative;
+    align-self: center;
+    top: -15rem;
+    left: 79.1px;
+    min-height: 66.6px;
+    max-height: 66.6px;
+    min-width: 66.6px;
+    max-width: 66.6px;
+    border-radius: 100%;
+    background-color: #ffffff;
+}
