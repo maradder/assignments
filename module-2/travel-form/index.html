@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="photoFrame img0"><img src="./pexels-andrea-piacquadio-3754680.jpg" alt="Airplanes on a Map"></div>
+
+    <div class="main">
+
+        <div class="block"><h1>BOOK NOW</h1></div>
+        <form action="" name="flightBooking">
+            <div class="passengerInfo">
+                <input type="text" name="firstName" class="passengerName" placeholder="First Name" required><br>
+                <input type="text" name="lastName" class="passengerName" placeholder="Last Name" required><br>
+            </div>
+            <div class="demographics">
+                <input type="number" name="age" id="passengerAge" class="demographics" min="0" placeholder="Age" required>
+                <label for="male"><p>Male</p></label>
+                <input type="radio" name="gender" id="male" class="demographics" value="male" required>
+                <label for="female"><p>Female</p></label>
+                <input type="radio" name="gender" id="female" class="demographics" value="female"><br>
+            </div>
+                <label for="destination">Destination</label>
+                <select name="destination" id="destination" required><br>
+                <option value="Please select a destination" default>Choose Destination</option>
+                <option value="Okinawa">Okinawa</option>
+                <option value="Iwakuni">Iwakuni</option>
+                <option value="Osaka">Osaka</option>
+                <option value="Sasebo">Sasebo</option>
+                <option value="Tokyo">Tokyo</option>
+            </select>
+            <div class="dietInput">
+                <div class="dietSelection">
+                    <label for="vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="dietaryRest" id="vegetarian" class="diet" value=" Vegetarian">
+                </div>
+                <div class="dietSelection">   
+                    <label for="kosher">Kosher</label>
+                    <input type="checkbox" name="dietaryRest" id="kosher" class="diet" value=" Kosher"><br>
+                </div>  
+                <div class="dietSelection">
+                    <label for="glutenFree">Gluten Free</label>
+                    <input type="checkbox" name="dietaryRest" id="glutenFree" class="diet" value=" Gluten Free">
+                </div>
+                <div class="dietSelection">
+                    <label for="carnivore">Carnivore Diet</label>
+                    <input type="checkbox" name="dietaryRest" id="carnivore" class="diet" value=" Carnivore Diet"><br>
+                </div>
+                </div>
+            <div class="buttons">
+                <button type="reset" id="reset">Reset</button>
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="photoFrame img1"><img src="./pexels-pok-rie-2125433.jpg" alt="Airplanes on a Map"></div>
+    <div class="photoFrame img2"><img src="./pexels-andrea-piacquadio-3769118.jpg" alt="Airplanes on a Map"></div>
+    <div class="photoFrame img3"><img src="./pexels-leah-kelley-185933.jpg" alt="Airplanes on a Map"></div>
+    <div class="photoFrame img4"><img src="./pexels-andrea-piacquadio-3769138.jpg" alt="Airplanes on a Map"></div>
+    <script src="./main.js"></script>
+</body>
+</html>

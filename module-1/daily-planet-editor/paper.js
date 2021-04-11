@@ -25,7 +25,7 @@ function whoWins(is_there_kryptonite, enemyName) {
 
 for (var i=0; i < enemies.length; i++) {
     var is_there_kryptonite = ""
-    if (i%2 === 0) {
+    if (i % 2 === 0) {
         is_there_kryptonite = true;
     } else {
         is_there_kryptonite = false;

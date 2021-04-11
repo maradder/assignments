@@ -1,10 +1,8 @@
 const readlineSync = require("readline-sync");
 
+let gameActive = true;
 
 function main() {
-    let gameActive = true;
-    while (gameActive == true) {
-
         ///////////////// CREATE CLASSES ///////////////////
         class Player {
             constructor(name) {
@@ -102,7 +100,6 @@ function main() {
             "I didn't expect to see anyone coming this way.  I hope you fare better than the last challenger.",
             "Be warned! You aren't the first to come along.  None have come back... Let's see if you do.",
             "Turn back!  It's a fool's errand to continue.  But if you must, proceed this way. "
-
         ]
 
         let attackingEnemy = '';
@@ -220,7 +217,7 @@ function main() {
                 enemyAppears();
                 return
             }
-            if (rand != 1) {
+            else {
                 console.log("The path is clear...");
                 console.log('');
                 return
@@ -269,11 +266,11 @@ function main() {
                     select();
                 } 
                 if (selectMove == 'q') {
-                    const confirm = readlineSync.keyIn('Are you sure you want to quit? y/n ', {limit: 'yn'});
-                    if (confirm === 'y' || 'Y') {
+                    const confirm = readlineSync.keyIn('Are you sure you want to quit? y/n ', {limit: 'yYnN'});
+                    if (confirm === 'y' || confirm === 'Y') {
                         quit();
                     }
-                    if (confirm === 'n' || 'N') {
+                    if (confirm === 'n' || confirm ===  'N') {
                         select();
                     };
                 };
@@ -346,7 +343,7 @@ function main() {
         startTheGame();
         select();
     
-    }
+    
 
 };
 

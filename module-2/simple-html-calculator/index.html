@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad36116b00.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Simple HTML Calculator</h1>
+    <div class="operation addition">
+        <h3>Addition</h3>
+        <form action="" name="addition">
+            <input type="number" name="add1" id="" placeholder="First Number">
+            <i class="fas fa-plus"></i>
+            <input type="number" name="add2" id="" placeholder="Second Number">
+            <button type="submit">
+                <i class="fas fa-arrow-right" id="addArrow"></i>
+                <i class="fas fa-equals" id="addEquals"></i>
+            </button>
+            <span class="result"><p id="sum">Sum</p></span>
+        </form>
+    </div>
+
+    <div class="operation subtraction">
+        <h3>Subtraction</h3>
+        <form action="" name="subtraction">
+            <input type="number" name="sub1" id="" placeholder="First Number">
+            <i class="fas fa-minus"></i>
+            <input type="number" name="sub2" id="" placeholder="Second Number">
+            <button type="submit">
+                <i class="fas fa-arrow-right" id="subArrow"></i>
+                <i class="fas fa-equals"  id="subEquals"></i>
+            </button>
+            <span class="result"><p id="difference">Difference</p></span>
+        </form>
+    </div>
+
+    <div class="operation multiplication">
+        <h3>Multiplication</h3>
+        <form action="" name="multiplication">
+            <input type="number" name="mult1" id="" placeholder="First Number">
+            <i class="fas fa-times"></i>
+            <input type="number" name="mult2" id="" placeholder="Second Number">
+            <button type="submit">
+                <i class="fas fa-arrow-right" id="multArrow"></i>
+                <i class="fas fa-equals"  id="multEquals"></i>
+            </button>
+            <span class="result"><p id="product">Product</p></span>
+        </form>
+    </div>
+
+<script src="./main.js"></script>
+</body>
+</html>
