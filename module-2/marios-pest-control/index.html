@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario's Pest Control</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header></header>
+    <div class="headerOverlay"><h1>MARIO'S PEST CONTROL</h1></div>
+    <main>
+        <div class="baddie baddie1">
+            <div class="baddieTitle">
+                <h2>
+                    <div class="baddieImageContainer"></div>
+                    GOOMBA
+                    <div class="baddieImageContainer">
+                        <img src="./src/img/goomba.png" alt="goomba">
+                    </div>
+                </h2>
+            </div>
+            <form class="baddieContainer" name="goombaForm" action="">
+
+                    <!-- <div class="dPad" id="baddie1">
+                        <div class="dPadUp"></div>
+                        <div class="dPadRight"></div>
+                        <div class="dPadDown"></div>
+                        <div class="dPadLeft"></div>
+                    </div> -->
+
+
+                    <div class="baddiePricePerHead">
+                        <input name="goombaPrice" type="number" min="0" value="5">
+                        <div class="coin">
+                            <img src="./src/img/coinsTimes.png" alt="Coin Multiplier">
+                        </div>
+                    </div>
+
+                    <div class="resultsContainer">
+                        <div class="counterContainer">
+                            <input name="goombaCount" type="number" min="0" value="0">
+                            <img src="./src/img/goomba.png" alt="GOOMBA">
+                        </div>
+                        <h1> = </h1>
+                        <div class="coinContainer" >
+                            <h1 class="results" id="baddie1Result">0</h1>
+                            <img src="./src/img/coin.png" alt="Total Coins">
+                        </div>
+                    </div>
+                    <div class="buttonWrapper">
+                        <button type="submit" id="submit1"></button>
+                    </div>
+            </form>
+        <div class="baddie baddie2">
+            <div class="baddieTitle">
+                <h2>
+                    <div class="baddieImageContainer"></div>
+                    BOB-OMB
+                    <div class="baddieImageContainer">
+                        <img src="./src/img/bob-omb.png" alt="bob-omb">
+                    </div>
+                </h2>
+            </div>
+            <form class="baddieContainer" name="bobombForm" action="">
+
+                <!-- <div class="dPad" id="baddie2">
+                    <div class="dPadUp"></div>
+                    <div class="dPadRight"></div>
+                    <div class="dPadDown"></div>
+                    <div class="dPadLeft"></div>
+                </div> -->
+
+
+                    <div class="baddiePricePerHead">
+                        <input name="bobombPrice" type="number" min="0" value="7">
+                        <div class="coin">
+                            <img src="./src/img/coinsTimes.png" alt="Coin Multiplier">
+                        </div>
+                    </div>
+
+                    <div class="resultsContainer">
+                        <div class="counterContainer">
+                            <input name="bobombCount" type="number" min="0" value="0">
+                            <img src="./src/img/bob-omb.png" alt="BOB-OMB">
+                        </div>
+                        <h1> = </h1>
+                        <div class="coinContainer">
+                            <h1 class="results" id="baddie2Result">0</h1>
+                            <img src="./src/img/coin.png" alt="Total Coins">
+                        </div>
+                    </div>
+                    <div class="buttonWrapper">
+                        <button type="submit" id="submit2"></button>
+                    </div>
+            </form>
+        </div>
+        <div class="baddie baddie3">
+            <div class="baddieTitle">
+                <h2>
+                    <div class="baddieImageContainer"></div>
+                    CHEEP-CHEEPS
+                    <div class="baddieImageContainer">
+                        <img src="./src/img/cheep-cheep.png" alt="Cheep-Cheep">
+                    </div>
+                </h2>
+            </div>
+            <form class="baddieContainer" name="cheepcheepForm" action="">
+
+                <!-- <div class="dPad" id="baddie3">
+                    <div class="dPadUp"></div>
+                    <div class="dPadRight"></div>
+                    <div class="dPadDown"></div>
+                    <div class="dPadLeft"></div>
+                </div> -->
+
+
+                    <div class="baddiePricePerHead">
+                        <input name="cheepcheepPrice" type="number" min="0" value="11">
+                        <div class="coin">
+                            <img src="./src/img/coinsTimes.png" alt="Coin Multiplier">
+                        </div>
+                    </div>
+
+                    <div class="resultsContainer">
+
+                        <div class="counterContainer">
+                            <input name="cheepcheepCount" type="number" min="0" value="0">
+                            <img src="./src/img/cheep-cheep.png" alt="CHEEP-CHEEP">
+                        </div>
+
+                        <h1> = </h1>
+
+                        <div class="coinContainer" >
+                            <h1 class="results" id="baddie3Result">0</h1>
+                            <img src="./src/img/coin.png" alt="Total Coins">
+                        </div>
+
+                    </div>
+                    <div class="buttonWrapper">
+                        <button type="submit" id="submit3"></button>
+                    </div>
+            </form>
+        </div>
+        <div class="totalContainer">
+            <h1> Total amount to bill: </h1>
+            <span><h1 id="billable"></h1></span>
+        </div>
+        <footer>
+            <div class="webContainer">
+                <h2>MARIOSPESTCONTROL.COM</h2>
+            </div>
+
+            <div class="emailContainer">
+                <h3>EMAIL ADDRESS</h3>
+                <p>mario@mariospestcontrol.com</p>
+            </div>
+
+            <div class="addressContainer">
+                <h3>OFFICE ADDRESS</h3>
+                <p>55 Wall Drive</p>
+                <p>Brooklyn, NY 11228</p>
+            </div>
+
+        </footer>
+    </main>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
