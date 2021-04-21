@@ -1,0 +1,112 @@
+
+/* Remove the default padding and margins from the html document */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the document's font size to use as a baseline referece for rem values. */
+html { 
+    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+body {
+    max-height: 100vw;
+    background-color: #b6b8ba;
+    background-position: right 14vh;
+    background-image: url(./pexels-charles-1851164\ \(1\).png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 5% auto 1rem auto;
+    padding: 1.5rem;
+    width: 40rem;
+    height: 40rem;
+    border-radius: .3rem;
+    background-color:#00EFC4;
+    box-shadow: .2rem .2rem .4rem #00C6D8;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin: 2.5rem 1.5rem;
+}
+
+h2 {
+    margin: .5rem auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: fit-content;
+}
+
+form > * {
+    width: 60%;
+    margin: .5rem auto;
+    border-radius: .3rem;
+    border-width: .1rem;
+}
+
+input {
+    height: 2rem;
+    padding: .5rem;
+}
+
+.form_button {
+    height: 4rem;
+    width: 50%;
+    background-color: #69be2897;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: #ffffff;
+}
+
+.form_button:hover {
+    height: 4.5rem;
+    width: 60%;
+    background: radial-gradient( #69be2887, #83f52c51);
+    font-weight: 600;
+    margin-top: 1rem;
+    box-shadow: .1rem .1rem .4rem .6rem  #00C6D8;
+    border: none;
+    color: #000000;
+}
+
+.response_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    min-width: fit-content;
+    width: 90%;
+    min-height: 12.5%;
+    margin: 2.5rem auto 4.5rem auto;
+    padding:.5rem;
+    border-radius: .3rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.pug_container img {
+    height: 50rem;
+    width: auto;
+    position: relative;
+    bottom: -10vh;
+}
+
+
+

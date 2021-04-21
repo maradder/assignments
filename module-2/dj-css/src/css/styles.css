@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    gap: 50px;
+    background-color: #333333;
+    height: 600px;
+    width: 1200px;
+    margin: 100px auto 100px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.musicBoxes {
+    display: flex;
+    flex-direction: column-reverse;
+}
+audio {
+    display: flex;
+    opacity: 0;
+    width: 120px;
+    position: relative;
+    bottom: 0px;
+}
+
+.box1 {
+    transition-duration: 3000ms;
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box1:hover {
+    transition-duration: 1000ms;
+    background-color: #F7F6E2;
+    background-image: url("../img/beatles.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    box-shadow: 0 6px 9px #3F84E5;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    transform: rotate(7995deg), rotate(0deg);
+    height: 90%;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box1:hover > audio {
+    opacity: 1;
+    outline: none;
+}
+
+.box2 {
+    transition-duration: 3000ms;
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+@keyframes disco {
+    6% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 600px 25px -4px	#C0C0C06f;
+        }
+
+    16% {box-shadow:
+    -74px 15px 25px -4px#C0C0C065,
+    200px 300px 25px -4px #C0C0C064,
+    -106px 200px 25px -4px #C0C0C065,
+    400px -200px 25px -4px #C0C0C0ef;
+    }
+
+    26% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 200px 25px -4px	#C0C0C06f;
+        }
+
+    36% {box-shadow:
+        -74px 15px 25px -4px #C0C0C065,
+        200px 300px 25px -4px #C0C0C0ef,
+        -106px 200px 25px -4px #C0C0C062,
+        400px -200px 25px -4px #C0C0C062;
+        }
+
+    46% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 600px 25px -4px	#C0C0C06f;
+        }
+
+    56% {box-shadow:
+    -74px 15px 25px -4px#C0C0C065,
+    200px 300px 25px -4px #C0C0C064,
+    -106px 200px 25px -4px #C0C0C065,
+    400px -200px 25px -4px #C0C0C0ef;
+    }
+
+    66% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 200px 25px -4px	#C0C0C06f;
+        }
+
+    76% {box-shadow:
+        -74px 15px 25px -4px #C0C0C065,
+        200px 300px 25px -4px #C0C0C0ef,
+        -106px 200px 25px -4px #C0C0C062,
+        400px -200px 25px -4px #C0C0C062;
+        }
+
+    86% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 600px 25px -4px	#C0C0C06f;
+        }
+
+    56% {box-shadow:
+    -74px 15px 25px -4px#C0C0C065,
+    200px 300px 25px -4px #C0C0C064,
+    -106px 200px 25px -4px #C0C0C065,
+    400px -200px 25px -4px #C0C0C0ef;
+    }
+
+    96% {box-shadow:
+        151px 158px 25px -4px #C0C0C065,
+        200px -136px 25px -4px	#C0C0C0ef,
+        -167px -200px 25px -4px #C0C0C065,
+        -200px 200px 25px -4px	#C0C0C06f;
+        }
+
+}
+
+.box2:hover {
+    transition-duration: 3000ms;
+    background-image: url("../img/MIiE.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    transform: rotate(7995deg), rotate(0deg);
+    height: 500px;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+    animation: disco 4500ms linear 3000ms infinite alternate;
+}
+
+.box2:hover ~ .musicBoxes {
+    display: none;
+}
+
+.box2:hover > audio {
+    transition-duration: 3000ms;
+
+    opacity: 1;
+    outline: none;
+    width: 195px;
+}
+
+
+.box3 {
+    transition-duration: 3000ms;
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box3 > video {
+    display: none;
+}
+
+
+.box3:hover {
+    transition-duration: 3000ms;
+    background-color: #000000;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    background-image: url("../img/madonna.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 3px 3px 6px #3F84E5;
+    height: 500px;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box3:hover > video {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+
+.box3:hover > audio {
+    transition-duration: 3000ms;
+    opacity: 1;
+    outline: none;
+    width: 195px;
+}
+
+
+.box4 {
+    transition-duration: 3000ms;
+
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box4:hover {
+    transition-duration: 3000ms;
+    background-color: #000000;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    background-image: url("../img/eve6.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 3px 3px 6px #3F84E5;
+    height: 500px;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box4:hover > audio {
+    transition-duration: 3000ms;
+    opacity: 1;
+    outline: none;
+    width: 195px;
+}
+
+
+.box5 {
+    transition-duration: 3000ms;
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box5:hover {
+    transition-duration: 3000ms;
+    background-color: #3F84E5;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    background-image: url("../img/fiddy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 78%;
+    box-shadow: 3px 3px 6px #3F84E5;
+    height: 500px;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box5:hover > audio {
+    transition-duration: 3000ms;
+    opacity: 1;
+    outline: none;
+    width: 195px;
+}
+
+
+.box6 {
+    transition-duration: 3000ms;
+    background-color: #ffffff;
+    Border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box6:hover {
+    transition-duration: 3000ms;
+    background-color: #000000;
+    Border: 2px solid #000000;
+    border-radius: 30px;
+    background-image: url("../img/whitewalls.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 3px 3px 6px #3F84E5;
+    height: 500px;
+    width: 200px;
+    margin: 10px;
+    padding: 2px;
+    position: inherit;
+    opacity: 1;
+}
+
+.box6:hover > audio {
+    transition-duration: 3000ms;
+    opacity: 1;
+    outline: none;
+    border-radius: 30px;
+    width: 195px;
+}

@@ -119,8 +119,9 @@ input[type=number] {
 
 .baddieContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    height: 80px;
+    height: fit-content;
     width: auto;
     margin: 0px 20px 50px 20px;
     border: 1px solid #7A8F41;
@@ -228,7 +229,7 @@ input[type=number] {
     color: #2E294E;
     font-weight: 700;
     text-align: center;
-    width: 65px;
+    width: 90px;
     height: 70px;
     text-shadow: 1px 1px 1px #C5D86D, -1px -1px 1px #C5D86D, -1px 1px 1px #C5D86D, 1px -1px 1px #C5D86D;
     border: none;
@@ -268,35 +269,31 @@ input[type=number] {
     width: auto;
 }
 
-.buttonWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-    border-radius: 6px;
-    background-color: #DDDDDD;
-}
-
-button {
-    display: flex;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: #FF0000;
-}
-
 .totalContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     border: 1px solid #2E294E;
     min-height: 80px;
-    width: 60vw;
+    width: auto;
     margin: auto 100px 50px 100px;
     padding: 50px;
-
+    background-color: #7A8F41;
 }
 
+.totalContainer img {
+    margin-left: 10px;
+    margin-bottom: -30px;
+    height: 30px;
+    width: auto;
+}
+
+.inline-bill {
+    display: flex;
+    align-items: center;
+}
 footer {
     display: flex;
     flex-direction: column;
@@ -326,7 +323,16 @@ footer {
     text-align: center;
 }
 
-@media  only screen and (min-width: 600px) {
+@media  only screen and (min-width: 601px) and (max-width: 780px) {
+    .baddieContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0px 100px 50px 100px;
+    }
+}
+
+@media  only screen and (min-width: 781px) {
     header {
         background-position-y: -80px;
     }
@@ -336,12 +342,13 @@ footer {
     } 
 
     .baddieContainer {
+        display: flex;
+        flex-direction: row;
         margin: 0px 100px 50px 100px;
     }
     
+    .totalContainer {
+    margin: auto 100px 50px 100px;
+    }
 }
-
-
-
-
 

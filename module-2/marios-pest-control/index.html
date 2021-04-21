@@ -25,14 +25,6 @@
             </div>
             <form class="baddieContainer" name="goombaForm" action="">
 
-                    <!-- <div class="dPad" id="baddie1">
-                        <div class="dPadUp"></div>
-                        <div class="dPadRight"></div>
-                        <div class="dPadDown"></div>
-                        <div class="dPadLeft"></div>
-                    </div> -->
-
-
                     <div class="baddiePricePerHead">
                         <input name="goombaPrice" type="number" min="0" value="5">
                         <div class="coin">
@@ -51,9 +43,14 @@
                             <img src="./src/img/coin.png" alt="Total Coins">
                         </div>
                     </div>
-                    <div class="buttonWrapper">
-                        <button type="submit" id="submit1"></button>
+ 
+                    <div class="dPad" id="baddie1">
+                        <div class="dPadUp"></div>
+                        <div class="dPadRight"></div>
+                        <div class="dPadDown"></div>
+                        <div class="dPadLeft"></div>
                     </div>
+
             </form>
         <div class="baddie baddie2">
             <div class="baddieTitle">
@@ -66,14 +63,6 @@
                 </h2>
             </div>
             <form class="baddieContainer" name="bobombForm" action="">
-
-                <!-- <div class="dPad" id="baddie2">
-                    <div class="dPadUp"></div>
-                    <div class="dPadRight"></div>
-                    <div class="dPadDown"></div>
-                    <div class="dPadLeft"></div>
-                </div> -->
-
 
                     <div class="baddiePricePerHead">
                         <input name="bobombPrice" type="number" min="0" value="7">
@@ -93,9 +82,14 @@
                             <img src="./src/img/coin.png" alt="Total Coins">
                         </div>
                     </div>
-                    <div class="buttonWrapper">
-                        <button type="submit" id="submit2"></button>
+
+                    <div class="dPad" id="baddie2">
+                        <div class="dPadUp"></div>
+                        <div class="dPadRight"></div>
+                        <div class="dPadDown"></div>
+                        <div class="dPadLeft"></div>
                     </div>
+    
             </form>
         </div>
         <div class="baddie baddie3">
@@ -109,14 +103,6 @@
                 </h2>
             </div>
             <form class="baddieContainer" name="cheepcheepForm" action="">
-
-                <!-- <div class="dPad" id="baddie3">
-                    <div class="dPadUp"></div>
-                    <div class="dPadRight"></div>
-                    <div class="dPadDown"></div>
-                    <div class="dPadLeft"></div>
-                </div> -->
-
 
                     <div class="baddiePricePerHead">
                         <input name="cheepcheepPrice" type="number" min="0" value="11">
@@ -140,14 +126,23 @@
                         </div>
 
                     </div>
-                    <div class="buttonWrapper">
-                        <button type="submit" id="submit3"></button>
+
+                    <div class="dPad" id="baddie3">
+                        <div class="dPadUp"></div>
+                        <div class="dPadRight"></div>
+                        <div class="dPadDown"></div>
+                        <div class="dPadLeft"></div>
                     </div>
+
             </form>
         </div>
         <div class="totalContainer">
-            <h1> Total amount to bill: </h1>
-            <span><h1 id="billable"></h1></span>
+            <h1 class="inline-bill"> Total bill: 
+                <span>
+                    <h1 class="inline-bill" id="billable"></h1>
+                </span>
+                <img src="./src/img/coin.png" alt="Total Coins">
+            </h1>            
         </div>
         <footer>
             <div class="webContainer">

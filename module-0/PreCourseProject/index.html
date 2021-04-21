@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Pre-Course Project</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <main class="main">
+        <h1>How many dog biscuits can you trade for?</h1>
+
+        <h2>Enter the quantities of dog treats you have on hand:</h2>
+        <form action="app.js" method="">
+            <input type="number" class="treat_row" name="biscuits" id="biscuits" value="" placeholder="Biscuits">
+            <input type="number" class="treat_row" name="jerkyStrips" id="jerkyStrips" value="" placeholder="Jerky Strips">
+            <input type="number" class="treat_row" name="chewingSticks" id="chewingSticks" value="" placeholder="Chewing Sticks">
+            <input type="submit" class=form_button onclick="convertDogTreats(); return false;" id="submit">
+        </form>
+        <div class="response_area" id="response_area">
+            <p id="totalValue"></p>
+            <p id="judgement"></p>
+        </div>
+    </main>
+    <div class="pug_container"><img src="./pexels-charles-1851164 (1).png" alt="Black Pug Dog" class="pug">Photo by Charles from Pexels
+    </div>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
+

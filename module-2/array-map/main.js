@@ -1,13 +1,13 @@
 function doubleNumbers(arr) {
     return arr.map(val => val * 2)}   
 
-// console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
+console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
 
 function stringItUp(arr){
     return arr.map(digit => digit.toString())
   }
   
-//   console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
+  console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
 
 
 function capitalizeNames(arr) {
@@ -22,7 +22,7 @@ function capitalizeNames(arr) {
     });
     console.log(newArr);
     };
-// capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]); // ["John", "Jacob", "Jingleheimer", "Schmidt"];
+capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]); // ["John", "Jacob", "Jingleheimer", "Schmidt"];
 
 
 function namesOnly(arr) {
@@ -99,11 +99,11 @@ console.log(makeStrings([
         age: 100
     }
 ])); 
-  // ["Angelina Jolie can go to The Matrix", 
-  // "Eric Jones is under age!!", 
-  // "Paris Hilton is under age!!", 
-  // "Kayne West is under age!!", 
-  // "Bob Ziroll can go to The Matrix"]
+  ["Angelina Jolie can go to The Matrix", 
+  "Eric Jones is under age!!", 
+  "Paris Hilton is under age!!", 
+  "Kayne West is under age!!", 
+  "Bob Ziroll can go to The Matrix"]
 
 
 
@@ -138,8 +138,8 @@ console.log(readyToPutInTheDOM([
         age: 100
     }
 ])); 
-  // ["<h1>Angelina Jolie</h1><h2>80</h2>", 
-  // "<h1>Eric Jones</h1><h2>2</h2>", 
-  // "<h1>Paris Hilton</h1><h2>5</h2>", 
-  // "<h1>Kayne West</h1><h2>16</h2>", 
-  // "<h1>Bob Ziroll</h1><h2>100</h2>"]
+  ["<h1>Angelina Jolie</h1><h2>80</h2>", 
+  "<h1>Eric Jones</h1><h2>2</h2>", 
+  "<h1>Paris Hilton</h1><h2>5</h2>", 
+  "<h1>Kayne West</h1><h2>16</h2>", 
+  "<h1>Bob Ziroll</h1><h2>100</h2>"]
