@@ -185,7 +185,6 @@ audio {
 
 .box2:hover > audio {
     transition-duration: 3000ms;
-
     opacity: 1;
     outline: none;
     width: 195px;

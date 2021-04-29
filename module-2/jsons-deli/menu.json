@@ -1,0 +1,105 @@
+{
+    "appetizers": [
+        {
+            "name": "Texas Roadhouse Rolls and Cinnamon Honey Butter",
+            "Inspired by": "Texas Roadhouse",
+            "Serves": "3-4",
+            "price": 4.25
+        },
+        {
+            "name": "Bloomin' Onion",
+            "Inspired by": "Outback Steakhouse",
+            "Serves": "4-5",
+            "price": 8.99
+        },
+        {
+            "name": "Stuffed Mushrooms",
+            "Inspired by": "Macaroni Grill",
+            "Serves": "3-4",
+            "price": 7.99
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "BLT",
+            "Description": "A BLT is a type of sandwich, named for the initials of its primary ingredients, bacon, lettuce, and tomato. - From Wikipedia",
+            "ingredients": ["bacon", "lettuce", "tomato", "mayonnaise", "cheese"],
+            "calories": 325,
+            "price": 5.45
+        },
+        {
+            "name": "Turkey Club",
+            "Description": "A club sandwich, also called a clubhouse sandwich, is a sandwich of bread (traditionally toasted), sliced cooked turkey, lettuce, tomato, and mayonnaise.  - From Wikipedia",
+            "ingredients": ["bacon", "turkey", "lettuce", "tomato", "mayonnaise", "monterey jack cheese"],
+            "calories": 375,
+            "price": 5.95
+        },
+        {
+            "name": "Balogna Sandwich",
+            "Description": "WYSIWYG",
+            "ingredients": ["Sliced bologna sausage ", "Processed American Cheese", "white bread", "mayonnaise"],
+            "calories": 125,
+            "price": 1.05
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": "Hawaiian Panini",
+            "Description": "Sandwich made with Italian bread, usually served warmed by grilling or toasting.  - From Wikipedia",
+            "ingredients": ["bbq sauce", "ham", "pineapple", "mozzarrella cheese"],
+            "calories": 525,
+            "price": 5.45
+        },
+        {
+            "name": "Philly Cheesesteak",
+            "Description": "A cheesesteak is a sandwich made from thinly sliced pieces of beefsteak and melted cheese in a long hoagie roll. A popular regional fast food, it has its roots in the U.S. city of Philadelphia, Pennsylvania.  - From Wikipedia",
+            "ingredients": ["tenderloin steak", "onions", "hoagie roll", "provolone cheese"],
+            "calories": 725,
+            "price": 6.45
+        },
+        {
+            "name": "French Dip",  
+            "Description": "A French dip sandwich, also known as a beef dip, is a hot sandwich consisting of thinly sliced roast beefon a 'French Roll'. Served with a dipping container of beef broth produced from the cooking process.  - From Wikipedia",
+            "ingredients": ["roast beef", "onions", "French roll", "Swiss cheese"],
+            "calories": 625,
+            "price": 6.35
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Raspberry Cheesecake",
+            "category": "cheesecake",
+            "calories": 650,
+            "price": 6.50
+        },
+        {
+            "name": "Creme Brulee",
+            "category": "custard",
+            "calories": 450,
+            "price": 9.50
+        },
+        {
+            "name": "Hot Fudge Sundae",
+            "category": "ice cream",
+            "calories": 540,
+            "price": 6.75
+        }
+    ],
+    "drinks": [
+        {
+            "drink": "Coca-Cola",
+            "caffenated": true,
+            "price": 1.5
+        },
+        {
+            "drink": "Root Beer",
+            "caffenated": false,
+            "price": 1.25
+        },
+        {
+            "drink": "Mt. Dew",
+            "caffenated": true,
+            "price": 1.75
+        }
+    ]
+}

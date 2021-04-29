@@ -64,9 +64,9 @@ body {
     background-color: #E76E34;
     width: 25%;
 }
-/* 
+
 /* Change to column below 768px wide */
-/*
+
 @media only screen and (max-width: 768px) {
     body {
         display: flex;
@@ -125,4 +125,4 @@ body {
         width: 100%;
     }
 
-} */
+}

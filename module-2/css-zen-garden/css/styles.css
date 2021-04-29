@@ -363,5 +363,15 @@ footer a img {
                                 "sb1"
                                 "sb2";
     }
+
+    .sidebar1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .example {
+        grid-auto-flow: column;
+    }
 }
 
