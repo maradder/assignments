@@ -70,7 +70,7 @@ form {
     flex-direction: column;
     align-items: center;
     height: 50rem;
-    width: 35rem;
+    width: 40rem;
     border-bottom: 2px solid #767676;
     border-right: 2px solid #767676;
     border-top: 2px solid #000000;
@@ -94,7 +94,7 @@ form {
     margin-bottom: 1.5rem;
     font-weight: 500;
     border-radius: 1.6rem;
-    box-shadow: 2px 2px 4px #000000d7;
+    /* box-shadow: 2px 2px 4px #000000d7; */
     border-top: 1px solid #767676;
     border-left: 1px solid #767676;
     border-bottom: 1px solid #000000;
@@ -111,6 +111,29 @@ form {
     flex-direction: row;
 }
 
+.completed {
+    text-decoration: line-through;
+    background-color: #49c510;
+    letter-spacing: .1rem;
+    font-weight: 700;
+    color: #121212;
+}
+
+.incomplete {
+    background-color: #ff0f0f;
+    letter-spacing: .1rem;
+    font-weight: 700;
+    color: #121212;
+}
+
+.completeCard {
+    box-shadow : 2px 2px 4px #49c510;
+}
+
+.incompleteCard {
+    box-shadow : 2px 2px 4px #ff0f0f;
+}
+
 #checkBoxMask {
     margin-top: 7.5rem;
 }
@@ -119,11 +142,11 @@ form {
     align-self: center;
     width: 72%;
     height: 3.6rem;
-    background-color: #ffffff;
     border-radius: 1.6rem;
     text-align: center;
     line-height: 3.6rem;
     margin: 0 auto 1.2rem auto;
+    text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 600;
     border-top: 2px solid #767676;
@@ -138,7 +161,7 @@ form {
 }
 
 .checkBoxMask:hover {
-    background: radial-gradient(#49c510, #215a06);
+    /* background: radial-gradient(#49c510, #215a06); */
     cursor: pointer;
     color: azure;
     text-shadow: 1px 1px 1px #000000;
@@ -208,14 +231,18 @@ input {
     font-weight: 500;
 }
 
+input:hover {
+    background-color: #94e270de;
+}
+
 input:focus {
     outline: none;
 }
 
 button {
-    height: 3.6rem;
-    width: 14.6rem;
-    margin: 2.4rem 1.2rem 1.2rem 1.2rem;
+    height: 7.2rem;
+    width: 32rem;
+    margin: 12.4rem 1.2rem 1.2rem 1.2rem;
     border-radius: 1.6rem;
     font-size: 1.8rem;
     font-weight: 600;
