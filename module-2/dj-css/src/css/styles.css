@@ -80,81 +80,100 @@ audio {
 
 @keyframes disco {
     6% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 600px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        250px -136px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 600px 5px -4px	#C0C0C06f;
         }
 
     16% {box-shadow:
-    -74px 15px 25px -4px#C0C0C065,
-    200px 300px 25px -4px #C0C0C064,
-    -106px 200px 25px -4px #C0C0C065,
-    400px -200px 25px -4px #C0C0C0ef;
+    -74px 15px 5px -4px#C0C0C065,
+    200px 300px 5px -4px #C0C0C064,
+    -106px 200px 5px -4px #C0C0C065,
+    400px -200px 5px -4px #C0C0C0bd;
     }
 
     26% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 200px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 200px 5px -4px	#C0C0C06f;
         }
 
     36% {box-shadow:
-        -74px 15px 25px -4px #C0C0C065,
-        200px 300px 25px -4px #C0C0C0ef,
-        -106px 200px 25px -4px #C0C0C062,
-        400px -200px 25px -4px #C0C0C062;
+        -74px 15px 5px -4px #C0C0C065,
+        200px 300px 5px -4px #C0C0C0bd,
+        -106px 200px 5px -4px #C0C0C062,
+        400px -200px 5px -4px #C0C0C062;
         }
 
     46% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 600px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        250px -336px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 600px 5px -4px	#C0C0C06f;
         }
 
     56% {box-shadow:
-    -74px 15px 25px -4px#C0C0C065,
-    200px 300px 25px -4px #C0C0C064,
-    -106px 200px 25px -4px #C0C0C065,
-    400px -200px 25px -4px #C0C0C0ef;
+        -74px 15px 5px -4px#C0C0C065,
+        350px 135px 5px -4px #C0C0C0bd, 
+        200px 300px 5px -4px #C0C0C064,
+        -106px 200px 5px -4px #C0C0C065,
+        400px -200px 5px -4px #C0C0C0bd;
     }
 
     66% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 200px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 200px 5px -4px	#C0C0C06f;
         }
 
     76% {box-shadow:
-        -74px 15px 25px -4px #C0C0C065,
-        200px 300px 25px -4px #C0C0C0ef,
-        -106px 200px 25px -4px #C0C0C062,
-        400px -200px 25px -4px #C0C0C062;
+        -74px 15px 5px -4px #C0C0C065,
+        200px 300px 5px -4px #C0C0C0bd,
+        -106px 200px 5px -4px #C0C0C062,
+        400px -200px 5px -4px #C0C0C062;
         }
 
     86% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 600px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 600px 5px -4px	#C0C0C06f;
         }
 
     56% {box-shadow:
-    -74px 15px 25px -4px#C0C0C065,
-    200px 300px 25px -4px #C0C0C064,
-    -106px 200px 25px -4px #C0C0C065,
-    400px -200px 25px -4px #C0C0C0ef;
+    -74px 15px 5px -4px#C0C0C065,
+    200px 300px 5px -4px #C0C0C064,
+    -106px 200px 5px -4px #C0C0C065,
+    400px -200px 5px -4px #C0C0C0bd;
     }
 
     96% {box-shadow:
-        151px 158px 25px -4px #C0C0C065,
-        200px -136px 25px -4px	#C0C0C0ef,
-        -167px -200px 25px -4px #C0C0C065,
-        -200px 200px 25px -4px	#C0C0C06f;
+        151px 158px 5px -4px #C0C0C065,
+        200px -136px 5px -4px	#C0C0C0bd,
+        -167px -200px 5px -4px #C0C0C065,
+        -200px 200px 5px -4px	#C0C0C06f;
         }
+
+}
+
+.discoBall {
+    position: relative;
+    z-index: -2;
+}
+
+.box2:hover > .discoBall {
+        animation: disco 4500ms linear 3000ms infinite alternate;
+        min-height: 12px;
+        min-width: 12px;
+        z-index: 0;
+        max-height: 12px;
+        max-width: 12px;
+        z-index: 3;
 
 }
 
@@ -176,7 +195,7 @@ audio {
     padding: 2px;
     position: inherit;
     opacity: 1;
-    animation: disco 4500ms linear 3000ms infinite alternate;
+    /* animation: disco 4500ms linear 3000ms infinite alternate; */
 }
 
 .box2:hover ~ .musicBoxes {

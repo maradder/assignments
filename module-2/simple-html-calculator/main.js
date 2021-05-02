@@ -4,6 +4,8 @@ let sub1 = document.subtraction.sub1;
 let sub2 = document.subtraction.sub2;
 let mult1 = document.multiplication.mult1;
 let mult2 = document.multiplication.mult2;
+let div1 = document.division.div1;
+let div2 = document.division.div2;
 
 document.addition.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -18,4 +20,9 @@ document.subtraction.addEventListener('submit', (e) => {
 document.multiplication.addEventListener('submit', (e) => {
     e.preventDefault();
     document.getElementById('product').innerText = (Number(mult1.value) * Number(mult2.value));
+});
+
+document.division.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('dividend').innerText = (Number(div1.value) / Number(div2.value));
 });

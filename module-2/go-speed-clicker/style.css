@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stylable {
+    background-color: #ffffff;
+}
+
+.ball {
+    position: absolute;
+    left: -45px;
+    top: 50vh;
+    background-color: crimson;
+    box-shadow: 1px 1px 5px 9px crimson;
+    min-height: 35px;
+    max-height: 35px;
+    min-width: 35px;
+    max-width: 35px;
+    border-radius: 50%;
+    z-index: 3;
+}
