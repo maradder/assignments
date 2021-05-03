@@ -229,6 +229,10 @@ form {
   color: #000000;
 }
 
+.imgUrlDisplay {
+  
+}
+
 input {
   height: 2.4rem;
   width: 30rem;
@@ -284,3 +288,4 @@ button:hover {
   color: azure;
   text-shadow: 1px 1px 1px #000000;
 }
+

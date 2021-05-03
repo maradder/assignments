@@ -10,24 +10,16 @@ collectAnimals("dog", "cat", "mouse", "jackolope", "platypus");
 
 
 
-function combineFruit(fruit, sweets, vegetables){
-    return {}
+function combineFruit(...food){
+  let [fruit, sweets, vegetables] = food;
+    return {fruit, sweets, vegetables}
 }
 
-combineFruit(["apple", "pear"],
-             ["cake", "pie"],
-             ["carrot"]);
 
 
-
-
-// => {
-//         fruit: ["apple", "pear"],
-//         sweets: ["cake", "pie"],
-//         vegetables: ["carrot"]
-//      }
-
-
+console.log(combineFruit(["apple", "pear"],
+["cake", "pie"],
+["carrot"]))
 
 const vacation = {  
     location: "Burly Idaho",

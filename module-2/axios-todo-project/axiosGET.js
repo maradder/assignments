@@ -1,5 +1,4 @@
 const axiosInputs = document.axiosInputs;
-
 let resultsDiv = document.querySelector(".results");
 let userInputTitle = document.getElementById("title").value;
 let userInputDescription = document.getElementById("description").value;
@@ -28,31 +27,61 @@ let getTodos = () => {
 
 // CREATE THE TODO CARDS
 const createTodo = arr => {
-  let todoCompleted = arr.completed;
-  let todoId = arr._id;
-  let todoTitle = arr.title;
-  let todoDescription = arr.description;
-  let todoPrice = arr.price;
-  let todoImgUrl = arr.imgUrl;
-  let completedTask;
+  const arrayDeconstruct = [
+                            arr.completed,
+                            arr._id,
+                            arr.title,
+                            arr.description,
+                            arr.price,
+                            arr.imgUrl
+  ];
 
+  const [
+          todoCompleted,
+          todoId,
+          todoTitle,
+          todoDescription,
+          todoPrice,
+          todoImgUrl
+  ] = arrayDeconstruct;
+
+  displayed_ID.push(todoId);
+
+  const toDoCardElements = [
+                              document.createElement("div"), // Create the todo card
+                              document.createElement("div"),
+                              document.createElement("div"), // Wrapper for the edit, complete, and delete buttons
+                              document.createElement("div"), // Stylable div that represents the complete checkbox
+                              document.createElement("input"), // The complete checkbox
+                              document.createElement("a"), // Edit button
+                              document.createElement("a"), // Delete button
+                              document.createElement("div"), // Todo title
+                              document.createElement("div"), // Todo description
+                              document.createElement("div"), // Todo price
+                              document.createElement("img") // Todo imgUrl
+  ];
+
+  const [
+          todoContainer,
+          todoDetailsContainer,
+          completedStatusWrap,
+          completedStatusCheckBoxMask,
+          completedStatusCheckBox,
+          editButton,
+          deleteButton,
+          titleTodoDisplay,
+          descriptionTodoDisplay,
+          priceTodoDisplay,
+          imgUrlTodoDisplay
+  ] = toDoCardElements;
+
+  
+  let completedTask;
   if (todoCompleted === true) {
     completedTask = "Complete";
   } else {
     completedTask = "Incomplete";
   }
-  displayed_ID.push(todoId);
-  const todoContainer = document.createElement("div"); // Create the todo card
-  const todoDetailsContainer = document.createElement("div");
-  const completedStatusWrap = document.createElement("div"); // Wrapper for the edit, complete, and delete buttons
-  const completedStatusCheckBoxMask = document.createElement("div"); // Stylable div that represents the complete checkbox
-  const completedStatusCheckBox = document.createElement("input"); // The complete checkbox
-  const editButton = document.createElement("a"); // Edit button
-  const deleteButton = document.createElement("a"); // Delete button
-  const titleTodoDisplay = document.createElement("div"); // Todo title
-  const descriptionTodoDisplay = document.createElement("div"); // Todo description
-  const priceTodoDisplay = document.createElement("div"); // Todo price
-  const imgUrlTodoDisplay = document.createElement("img"); // Todo imgUrl
 
   todoContainer.setAttribute("tag", todoId);
   todoContainer.classList.add("todoContainer");
@@ -94,11 +123,6 @@ const createTodo = arr => {
     todoContainer.classList.toggle("completeCard");
     todoContainer.classList.toggle("incompleteCard");
     console.log(`The current status is ${completedStatusCheckBox.checked}`);
-    if (completedStatusCheckBox.checked === true) {
-      // completedStatusCheckBoxMask.innerText = "Complete";
-    } else {
-      // completedStatusCheckBoxMask.innerText = "Incomplete";
-    }
     axios
       .put(`https://api.vschool.io/marcusradder/todo/${todoId}`, {
         completed: completedStatusCheckBox.checked,
@@ -119,7 +143,7 @@ const createTodo = arr => {
     let editImgUrl = document.createElement("input");
     let submitEditButton = document.createElement("button");
 
-    let thisTarget = e.target;
+    // let thisTarget = e.target;
     let placeHolderTitle = todoTitle; // thisTarget.querySelector('.titleDisplay');
     let placeHolderDescription = todoDescription; // thisTarget.querySelector('.descriptionDisplay');
     let placeHolderPrice = todoPrice; // thisTarget.querySelector('.priceDisplay');
@@ -162,7 +186,7 @@ const createTodo = arr => {
     submitEditButton.innerText = "Submit Changes";
     editContainer.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log(e.target.tag);
+      // console.log(`is this printing ${e.target.tag}`);
       console.log(todoId);
       console.log(`Before ${displayed_ID}`);
       displayed_ID = displayed_ID.filter((toDo) => toDo !== todoId);
@@ -220,7 +244,7 @@ const createTodo = arr => {
       .delete(`https://api.vschool.io/marcusradder/todo/${todoId}`)
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error));
-    todo2Delete.remove();
+      todo2Delete.remove();
   });
 
   titleTodoDisplay.innerText = `Todo Title: ${todoTitle}`;
@@ -242,13 +266,13 @@ const createTodo = arr => {
   completedStatusWrap.appendChild(editButton); // 2
   completedStatusWrap.appendChild(completedStatusCheckBoxMask); // 3
   completedStatusWrap.appendChild(deleteButton); // 4
-  todoDetailsContainer.appendChild(titleTodoDisplay); // 6
-  todoDetailsContainer.appendChild(descriptionTodoDisplay); // 7
-  todoDetailsContainer.appendChild(priceTodoDisplay); // 8
-  todoDetailsContainer.appendChild(imgUrlTodoDisplay); // 9
-  todoContainer.appendChild(completedStatusWrap); // 5
-  todoContainer.appendChild(todoDetailsContainer);
-  resultsDiv.appendChild(todoContainer); // 10
+  todoDetailsContainer.appendChild(titleTodoDisplay); // 5
+  todoDetailsContainer.appendChild(descriptionTodoDisplay); // 6
+  todoDetailsContainer.appendChild(priceTodoDisplay); // 7
+  todoDetailsContainer.appendChild(imgUrlTodoDisplay); // 8
+  todoContainer.appendChild(completedStatusWrap); // 9
+  todoContainer.appendChild(todoDetailsContainer); //10
+  resultsDiv.appendChild(todoContainer); // 11
 }
 
 // POST TODO BUTTON
