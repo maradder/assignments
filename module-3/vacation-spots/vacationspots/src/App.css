@@ -1,0 +1,38 @@
+:root {
+  font-size: 10px;
+}
+
+.blurredCard {
+  min-height: 100%;
+  max-height: 100%;
+  width: 12vw;
+  position: relative;
+  top: -88%;
+  left: 0px;
+  border-radius: 10px;
+  z-index: -1;
+  background: linear-gradient(45deg, #dfe9f330 80%, #D7FFFEc5);
+  box-shadow: 1px 1px 18px #efefefa9;
+  /* filter: blur(80px); */
+  backdrop-filter: opacity(60%);
+
+}
+
+@media screen and (max-height: 1300px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

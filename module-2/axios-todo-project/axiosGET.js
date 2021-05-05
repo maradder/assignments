@@ -142,8 +142,6 @@ const createTodo = arr => {
     let editPrice = document.createElement("input");
     let editImgUrl = document.createElement("input");
     let submitEditButton = document.createElement("button");
-
-    // let thisTarget = e.target;
     let placeHolderTitle = todoTitle; // thisTarget.querySelector('.titleDisplay');
     let placeHolderDescription = todoDescription; // thisTarget.querySelector('.descriptionDisplay');
     let placeHolderPrice = todoPrice; // thisTarget.querySelector('.priceDisplay');
