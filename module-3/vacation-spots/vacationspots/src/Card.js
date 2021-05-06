@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 import places from './spots.js';
 
 
@@ -11,23 +12,26 @@ const containerStyle = {
     fontFamily: "'Poppins', sans-serif"
 }
 
-const cardStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "left",
-    justifyContent: "space-between",
-    height: "40vh",
-    width: "12vw",
-    background: "linear-gradient(325deg, #a1a1a1ff, 1%, #72727200)",
-    margin: "10px 3vw",
-    borderRadius: "10px",
-    boxShadow: "14px 14px 20px #121212a9",
-    userSelect: "none",
-    borderLeft: "1px solid #bbbbbb",
-    borderTop: "1px solid #bbbbbb",
-    borderRight: ".5px solid #868686",
-    borderBottom: ".5px solid #868686"
+const CardOne = styled.h1`
+display: "flex",
+flex-direction: "column",
+align-items: "left",
+justify-cContent: "space-between",
+height: "42vh",
+width: "auto",
+background: "linear-gradient(325deg, #a1a1a1ff, 1%, #72727200)",
+margin: "10px 3vw",
+borderradius: "10px",
+box-shadow: "14px 14px 50px #121212a9",
+user-select: "none",
+border-left: "1px solid #bbbbbb",
+border-top: "1px solid #bbbbbb",
+border-right: ".5px solid #868686",
+border-bottom: ".5px solid #868686",
+backdrop-filter: "45%"
 }
+`;
+
 
 const placeStyle = {
     fontSize: "2.8rem",
@@ -38,33 +42,39 @@ const placeStyle = {
 }
 
 const priceStyle  = {
-    position: "relative",
-    top: "52%",
+    // position: "relative",
+    // top: "0px",
     borderRadius: "0 0 10px 10px",
-    margin: "0 0 10px 0",
+    margin: "0 10PX 10px 0",
     fontFamily: "'Enriqueta', serif",
     fontSize: "4.8rem",
-    textAlign: "center",
+    textAlign: "right",
     verticalAlign: "middle",
     color: "#121212", // "#03af3c"
     lineHeight: "auto",
     borderTop: "2px solid #c4c4c480"
+}
 
+const spaceStyle = {
+    content: "",
+    height: "10vh"
 }
 
 const timeStyle  = {
     fontSize: "2.8rem",
+    fontWeight: "600",
     textAlign: "center",
     position: "relative",
-    top: "55%"
+    top: "0"
 }
 
 const priceSpan = {
     display: "block",
     fontSize: "1.6rem",
     fontFamily: "'Poppins', sans-serif",
-    fontWeight: "600",
-    textAlign: "center"
+    fontWeight: "700",
+    margin: "-30px 10px 0 0",
+    textAlign: "right"
 }
 
 const imgStyle = {
@@ -84,14 +94,16 @@ const Card = () => {
             {places.map(destination =>
             <div>
                 <img className="cards" src={ destination.imgUrl } alt={ destination.imgAlt } style={ imgStyle }></img>
-                <div style={ cardStyle }>
+                <CardOne>
                     <div>
                         <p className="placeName" style={ placeStyle }>{ destination.place }</p>
-                        <p className="price" style={ priceStyle }><span style={ priceSpan }>Trip costs around:</span>{ `$${destination.price}` }</p>
+                        <span style={ priceSpan }>Trip costs around:</span>
+                        <p className="price" style={ priceStyle }>{ `$${destination.price}` }</p>
+                        <div style={ spaceStyle }></div> 
                         <p className="timeToGo" style={ timeStyle }>{ `It's best to go in the ${destination.timeToGo}` }</p>
                     </div>
+                </CardOne>
                     <div className="blurredCard"></div>
-                </div>
             </div>
             )}
         </div>
