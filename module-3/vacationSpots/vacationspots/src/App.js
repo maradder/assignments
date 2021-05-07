@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header className="App-header">
-        this is a header
+        Vacation Spots
       </Header>
       <VacaySpots />
     </div>

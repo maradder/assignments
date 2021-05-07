@@ -32,8 +32,8 @@ border: none;
 border-radius: 10px`
 
 const Header = styled.header`
-background-color: #30cfd0;
-min-height: 100px;
+background: rgb(194,178,146);
+background: radial-gradient(circle, rgba(194,178,146,1) 2%, rgba(92,121,9,1) 40%, rgba(0,37,45,0.7287289915966386) 71%);min-height: 100px;
 display: flex;
 flex-direction: row;
 align-items: center;
