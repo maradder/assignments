@@ -1,6 +1,6 @@
 const friendObject = [
     {
-      name: "Ben",
+      name: "Gert",
       age: 29,
       profileUrl: 'https://images.pexels.com/photos/6930504/pexels-photo-6930504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 
@@ -21,7 +21,7 @@ const friendObject = [
         }
       ]
     },{
-      name: "Bob",
+      name: "Wanda",
       age: 31,
       profileUrl: 'https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       pets: [
@@ -47,9 +47,9 @@ const friendObject = [
         }
       ]
     },{
-      name: "Jacob",
+      name: "Vashti",
       age: 20,
-      profileUrl: 'https://images.pexels.com/photos/7680673/pexels-photo-7680673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      profileUrl: 'http://2.bp.blogspot.com/-RoQooVwooZg/ThCypYx6GdI/AAAAAAAABxk/Hg90DW3uPys/s1600/IMG_2321.JPG',
       pets: [
         {
           name: "fluffy",
