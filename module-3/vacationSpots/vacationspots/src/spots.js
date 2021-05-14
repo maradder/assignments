@@ -7,7 +7,7 @@ const places = [
         imgAlt: "Flag of the United States"
     },
     {
-        place: "Cancun, Mexico",
+        place: "Texas, Mexico",
         price: 900,
         timeToGo: "Winter",
         imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/800px-Flag_of_Mexico.svg.png",
@@ -15,7 +15,7 @@ const places = [
     },
     {
         place: "China",
-        price: 1200,
+        price: 320,
         timeToGo: "Fall",
         imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/800px-Flag_of_the_People%27s_Republic_of_China.svg.png",
         imgAlt: "Flag of the People's Republic of China"
@@ -23,7 +23,7 @@ const places = [
     {
         place: "Russia",
         price: 1100,
-        timeToGo: "Summer",
+        timeToGo: "Winter",
         imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png",
         imgAlt: "Flag of Russia"
     },

@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.dice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas {
+    margin: 100px;
+    color: #b32134;
+    transform: scale(9);
+}
+
+button {
+    height: 60px;
+    width: 120px;
+}

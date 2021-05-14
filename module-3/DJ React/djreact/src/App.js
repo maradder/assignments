@@ -1,14 +1,14 @@
 import './App.css';
-import React from 'react';
+import React from "react";
 import Square from './Square';
-import song1 from "./alex-productions-dance-party-jump.mp3"
-import song2 from "./batchbug-cant-stop-me.mp3"
-import song3 from "./flanzen-promises.mp3"
-import song4 from "./leonell-cassio-a-magical-journey-through-space.mp3"
-import song5 from "./liqwyd-sunny.mp3"
-import song6 from "./pika5onic-over-hit.mp3"
-import song7 from "./punch-deck-hollow-sun.mp3"
-import song8 from "./vendredi-all-night-long.mp3"
+import song1 from "./music/alex-productions-dance-party-jump.mp3"
+import song2 from "./music/batchbug-cant-stop-me.mp3"
+import song3 from "./music/flanzen-promises.mp3"
+import song4 from "./music/leonell-cassio-a-magical-journey-through-space.mp3"
+import song5 from "./music/liqwyd-sunny.mp3"
+import song6 from "./music/pika5onic-over-hit.mp3"
+import song7 from "./music/punch-deck-hollow-sun.mp3"
+import song8 from "./music/vendredi-all-night-long.mp3"
 
 // import { Button } from './styledComponents';
 
@@ -36,61 +36,111 @@ const [ song1Audio,
 class App extends React.Component {
   state = {
         colors: ["white", "black", "black", "white"],
-        songPlaying: null
+        songPlaying: false
         };
 
-  playSound = audioFile => {
-    audioFile.play();
+
+
+  playSound = (audio) => {
+    audio.play();
+  }
+
+  pauseSound = (audio) => {
+    audio.pause();
   }
 
   djSmall = () => {
+    let otherAudio = songList.filter(song => song !== song1Audio)
+    console.log(otherAudio)
+    this.pauseSound(otherAudio)
     this.playSound(song1Audio)               
-    this.setState(({colors}) =>  ({colors: colors.map(color => color !== 'white' ? 'white' : 'black')}))
+
+    this.setState(({colors, songPlaying}) => { 
+      return {
+        colors: colors.map(color => color !== 'white' ? 'white' : 'black'), 
+        songPlaying: song1Audio
+      }
+    })
   }
 
-  partyDj = () => { 
+  partyDj = () => {
+    let otherAudio = songList.filter(song => song !== song2Audio)
+    this.pauseSound(otherAudio) 
     this.playSound(song2Audio)               
-    this.setState(({colors}) => {
-      return {colors: ['purple', 'purple', colors[2], colors[3]]} 
+    this.setState(({colors, songPlaying}) => {
+      return {colors: ['purple', 'purple', colors[2], colors[3]],
+      songPlaying: song2Audio
+    }
+
     })
   }
   
   proDjLeft = () => { 
+    let otherAudio = songList.filter(song => song !== song3Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song3Audio)               
-    this.setState(({colors}) => {
-      return {colors: [colors[0], colors[1], 'blue', colors[3]]} 
+    this.setState(({colors, songPlaying}) => {
+      return {colors: [colors[0], colors[1], 'blue', colors[3]],
+      songPlaying: song3Audio
+    }
+
     })
   }
   
   proDjRight = () => {
+    let otherAudio = songList.filter(song => song !== song4Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song4Audio)               
-    this.setState(({colors}) => {
-      return {colors: [colors[0], colors[1], colors[2], 'blue']} 
+    this.setState(({colors, songPlaying}) => {
+      return {colors: [colors[0], colors[1], colors[2], 'blue'],
+      songPlaying: song4Audio
+    }
+
     })
   }
 
   bigDjOne = () => {
+    let otherAudio = songList.filter(song => song !== song5Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song5Audio)               
-    this.setState(({colors}) => {
-      return {colors: ["pink", colors[1], colors[2], colors[3]]}
+    this.setState(({colors, songPlaying}) => {
+      return {colors: ["pink", colors[1], colors[2], colors[3]],
+      songPlaying: song5Audio
+    }
+
     })
   }
   bigDjTwo = () => {
+    let otherAudio = songList.filter(song => song !== song6Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song6Audio)               
-    this.setState(({colors}) => {
-      return {colors: [colors[0], "green", colors[2], colors[3]]}
+    this.setState(({colors, songPlaying}) => {
+      return {colors: [colors[0], "green", colors[2], colors[3]],
+      songPlaying: song6Audio
+    }
+
     })
   }
   bigDjThree = () => {
+    let otherAudio = songList.filter(song => song !== song7Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song7Audio)               
-    this.setState(({colors}) => {
-      return {colors: [colors[0], colors[1], "teal", colors[3]]}
+    this.setState(({colors, songPlaying}) => {
+      return {colors: [colors[0], colors[1], "teal", colors[3]],
+      songPlaying: song7Audio
+    }
+
     })
   }
   bigDjFour = () => {
+    let otherAudio = songList.filter(song => song !== song8Audio)
+    this.pauseSound(otherAudio)
     this.playSound(song8Audio)               
-    this.setState(({colors}) => {
-      return {colors: [colors[0], colors[1], colors[2], "orange"]}
+    this.setState(({colors, songPlaying}) => {
+      return {colors: [colors[0], colors[1], colors[2], "orange"],
+      songPlaying: song8Audio
+    }
+
     })
   }
 

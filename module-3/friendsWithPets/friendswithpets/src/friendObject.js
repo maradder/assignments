@@ -47,7 +47,7 @@ const friendObject = [
         }
       ]
     },{
-      name: "Vashti",
+      name: "Steve",
       age: 20,
       profileUrl: 'http://2.bp.blogspot.com/-RoQooVwooZg/ThCypYx6GdI/AAAAAAAABxk/Hg90DW3uPys/s1600/IMG_2321.JPG',
       pets: [

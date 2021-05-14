@@ -1,5 +1,5 @@
 import React from 'react'
-import places from './spots.js'
+import spots from './spots.js'
 import dollarLogo from './dollarSign.svg'
 import { Button } from './styledComponents.js'
 import { Card } from './styledComponents.js'
@@ -46,40 +46,30 @@ const PricePoint = (props) => {
 const VacaySpots = () => {
     return (
         <ContentContainerRow className="container">
-            {places.map(destination =>
+            {spots.map(destination =>
             <div>
                 <ImgFlags className="cards" src={ destination.imgUrl } alt={ destination.imgAlt }></ImgFlags>
                 <Card>
-                <ContentContainerColumn>
-                <ContentContainerRow>
-                    <PricePoint priceForTrip={destination.price} />
-                </ContentContainerRow>
-                <ContentContainerChild>
-                    <CardBodyCopy className="timeToGo">{ `It's best to go in the ${destination.timeToGo}` }</CardBodyCopy>
-                </ContentContainerChild>
-                <ContentContainerChild style={ Columnize }>
-                    <CardSubheading>Trip costs around:</CardSubheading>
-                    <CardHeading className="price">{ `$${destination.price}` }</CardHeading>
-                </ContentContainerChild>
-                <ContentContainerChild >
-                    <CardHeading className="placeName" >{ destination.place }</CardHeading>
-                </ContentContainerChild>
-                </ContentContainerColumn>
-                    {/* <ContentContainerColumn>
-                        <ContentContainerChild >
-                            <CardHeading className="placeName" >{ destination.place }</CardHeading>
-                        </ContentContainerChild>
-                        <ContentContainerChild>
-                            <CardSubheading>Trip costs around:</CardSubheading>
-                            <CardHeading className="price">{ `$${destination.price}` }</CardHeading>
-                        </ContentContainerChild>
-                        <ContentContainerChild>
-                        <CardBodyCopy className="timeToGo">{ `It's best to go in the ${destination.timeToGo}` }</CardBodyCopy>
-                        </ContentContainerChild>
+                    <ContentContainerColumn>
                         <ContentContainerRow>
                             <PricePoint priceForTrip={destination.price} />
                         </ContentContainerRow>
-                    </ContentContainerColumn> */}
+
+                        <ContentContainerChild>
+                            <CardBodyCopy className="timeToGo">{ `It's best to go in the ${destination.timeToGo}` }</CardBodyCopy>
+                        </ContentContainerChild>
+
+                        <ContentContainerChild style={ Columnize }>
+                            <CardSubheading>Trip costs around:</CardSubheading>
+                            <CardHeading className="price">{ `$${destination.price}` }</CardHeading>
+                        </ContentContainerChild>
+
+                        <ContentContainerChild >
+                            <CardHeading className="placeName" >{ destination.place }</CardHeading>
+                        </ContentContainerChild>
+
+                    </ContentContainerColumn>
+
                 </Card>
                     <div className="blurredCard"></div>
             </div>
