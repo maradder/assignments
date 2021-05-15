@@ -8,8 +8,6 @@ import {ProfileContainer} from './styles.js'
 
 
 const Friend = (props) => {
-    console.log(props.PetPic)
-
     return (
         <div style={ Card } key={ props.name }>
             <div style={ ContainerRow }>

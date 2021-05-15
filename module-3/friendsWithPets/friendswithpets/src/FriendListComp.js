@@ -6,9 +6,6 @@ import { GridContainer } from './styles.js'
 
 
 function FriendList() {
-    console.log(friendObject.map(friend => {
-        return friend.profileUrl
-    }))
     return (
         <div style={ GridContainer }>
             {friendObject.map(friend => 

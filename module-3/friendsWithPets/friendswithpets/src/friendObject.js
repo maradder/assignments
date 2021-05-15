@@ -1,12 +1,12 @@
 const friendObject = [
     {
-      name: "Gert",
+      name: "Marcus",
       age: 29,
       profileUrl: 'https://images.pexels.com/photos/6930504/pexels-photo-6930504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 
       pets: [
         {
-          name: "spot",
+          name: "Spot",
           breed: "tabby",
           petPic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNOcVjTmqKQi0J4hN9Liu9LO5BzYc3rmrNAA&usqp=CAU'
           
@@ -15,18 +15,18 @@ const friendObject = [
           breed: "husky",
           petPic: 'https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1257560163-scaled-e1610062322469.jpg'
         },{
-          name: "Bear the bear",
+          name: "Dave the Donkey",
           breed: "Grizzly",
           petPic: 'https://static.producer.com/wp-content/uploads/2017/11/23154629/22-FILE-PHOTO-LMZ021108grizzlybear-copy.jpg'
         }
       ]
     },{
-      name: "Wanda",
+      name: "Oscar",
       age: 31,
       profileUrl: 'https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       pets: [
         {
-          name: "Sally",
+          name: "Tina",
           breed: "Australian Shepard",
           petPic: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/04113830/Australian-Shepherd.10440112.jpg'
         }
@@ -49,7 +49,7 @@ const friendObject = [
     },{
       name: "Steve",
       age: 20,
-      profileUrl: 'http://2.bp.blogspot.com/-RoQooVwooZg/ThCypYx6GdI/AAAAAAAABxk/Hg90DW3uPys/s1600/IMG_2321.JPG',
+      profileUrl: 'https://images.pexels.com/photos/7681047/pexels-photo-7681047.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       pets: [
         {
           name: "fluffy",
