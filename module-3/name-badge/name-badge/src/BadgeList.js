@@ -8,7 +8,7 @@ import {    Badge,
             BodyBand,
             BottomBand } from './StyledComponents'
 
-const BadgeList = (props) => {
+const Badge = (props) => {
 
     return (
         <Badge key={props.key} data={props} style={{border: `${props.badgenumber % 2 ? "1px solid #a7150c" : "1px solid #009EFF"}`}}>
@@ -30,6 +30,4 @@ const BadgeList = (props) => {
     )
 }
 
-export {
-    BadgeList,
-}
+export default Badge

@@ -1,4 +1,55 @@
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
+
+
+const DivOne = styled.div`
+    background-color: ${props => props.backgroundcolor};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
+const DivTwo = styled.div`
+    background-color: ${props => props.backgroundcolor};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
+const DivThree = styled.div`
+    background-color: ${props => props.backgroundcolor};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
+const DivFour = styled.div`
+    background-color: ${props => props.backgroundcolor};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
+const DivFive = styled.div`
+    background-color: ${props => props.backgroundcolor.};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
+const DivSix = styled.div`
+    background-color: ${props => props.backgroundcolor};
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px; 
+    border-radius: 8px;
+`
+
 
 const AppWrapper = styled.div`
     display: flex;
@@ -25,24 +76,30 @@ const Footer = styled.footer`
     bottom: 0px;
     height: 8.4rem;
     width: 100vw;
-    background-color: pink;
+    background-color: ${props => props.foregroundcolor};
 `
 
+const H1 = styled.h1`
+    font-size: 96px;
+`
 
-
-const Header = styled.header`
+const StyledHeader = styled.header`
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 8.4rem;
     width: 100vw;
-    /* background-color: pink;     */
+    background-color: ${props => props.background};    
+`
+const Home = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 `
 
 const Main = styled.main`
     height: 100%;
     width: 100vw;
-    background-color: blue;
 `
 
 const NavList = styled.ul`
@@ -53,8 +110,10 @@ const NavList = styled.ul`
     /* margin: auto; */
 `
 
-const NavLink = styled.li`
+const NavLink = styled(Link)`
     margin: auto 5rem;
+    text-decoration-line: none;
+    color: #121212;
 `
 
 const NavText = styled.a`
@@ -66,8 +125,16 @@ const NavText = styled.a`
 export {
     AppWrapper,
     DayNightToggle,
+    DivOne,
+    DivTwo,
+    DivThree,
+    DivFour,
+    DivFive,
+    DivSix,
     Footer,
-    Header,
+    H1,
+    Home,
+    StyledHeader,
     Main,
     NavList,
     NavLink,

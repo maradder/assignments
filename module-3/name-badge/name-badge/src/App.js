@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component }from 'react';
-import { BadgeList } from './BadgeList';
+import Badge from './BadgeList';
 
 class App extends Component{
   state = {
@@ -112,7 +112,7 @@ class App extends Component{
 
         <div>
           {this.state.badges.map(badge =>
-            <BadgeList  firstname={badge.firstName}
+            <Badge  firstname={badge.firstName}
                         lastname={badge.lastName}
                         email={badge.email}
                         birthplace={badge.birthplace}

@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/maradder/assignments/issues"
   },
-  "homepage": "https://github.com/maradder/assignments#readme"
+  "homepage": "https://github.com/maradder/assignments#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react-router-dom": "^5.2.0"
+  }
 }
