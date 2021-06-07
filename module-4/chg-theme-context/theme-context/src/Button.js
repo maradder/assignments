@@ -17,6 +17,7 @@ const Button = (props) => {
                         borderRadius: "50%",
                         backgroundColor: currentTheme.background,
                         color: currentTheme.buttonText,
+                        transition: "all .3s linear",
                         }}><i   className={props.daynight} 
                                 style={{
                                     color: currentTheme.dayNightButtonText,

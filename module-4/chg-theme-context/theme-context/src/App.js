@@ -4,9 +4,9 @@ import Main from './Main'
 import Footer from './Footer'
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ transition: "all .5s linear" }}>
       <Header/>
-      <Main>
+      <Main >
       </Main>
       <Footer/>
     </div>

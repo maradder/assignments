@@ -16,7 +16,7 @@ const Main = () => {
                                     alignItems: 'center',
                                     backgroundImage: currentTheme.bgImage,
                                     backgroundSize: "cover",
-                                    
+                                    transition: "all .3s linear",
                                     // backgroundRepeat: "no-repeat",
                                     backgroundColor: currentTheme.background,
                                     color: currentTheme.primaryText,

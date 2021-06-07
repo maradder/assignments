@@ -20,6 +20,7 @@ const Header = () => {
                             width: '100vw',
                             borderBottom: `1px solid ${currentTheme.primaryText}`,
                             background: currentTheme.background,
+                            transition: "all .3s linear",
                             }}>
                 <h1 style={{
                             color: currentTheme.primaryText,
