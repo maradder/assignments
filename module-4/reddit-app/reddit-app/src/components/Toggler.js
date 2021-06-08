@@ -15,9 +15,16 @@ const Button = styled.button`
 const Toggle = ({ theme, toggleTheme }) => {
   return <Button onClick={toggleTheme}>Switch Theme</Button>;
 };
+
+const useToggle = () => {
+  return (v) => !v;
+};
+
 Toggle.propTypes = {
   theme: string.isRequired,
   toggleTheme: func.isRequired,
 };
 
 export default Toggle;
+
+export { useToggle };
