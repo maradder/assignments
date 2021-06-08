@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useDarkMode } from "./components/useDarkMode";
 import axios from "axios";
 import { ThemeProvider } from "styled-components";
@@ -6,14 +6,17 @@ import { GlobalStyles } from "./components/GlobalStyles";
 import Toggle from "./components/Toggler";
 import { lightTheme, darkTheme } from "./components/Themes";
 import {secrets} from './.secrets.js'
+import { Submission, Listing } from "snoowrap";
 const snoowrap = require("snoowrap");
+let initial
 
 function App() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const [sport, setSports] = useState(['hello'])
   const ua = navigator.userAgent;
-
-
+  
+  
   const otherRequester = new snoowrap({
     userAgent: ua,
     clientId: secrets.clientId,
@@ -21,9 +24,14 @@ function App() {
     username: secrets.username,
     password: secrets.password
   });
-  const handleClick = () => console.log(otherRequester.getSubreddit('snoowrap').getHot().then(console.log)
-  );
+  
+  // const getInitial = () => otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => (<div>{Submission.media_embed}</div>)))
+  const getInitial = () => otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => setSports(prevState => [...prevState, Submission])))
 
+  const handleClick = () => getInitial()
+
+  // useEffect(() => {
+    // const initial = otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => (<div>{Submission.media_embed}</div>)))}, [])
   return (
     <ThemeProvider theme={themeMode}>
       <>
@@ -67,6 +75,8 @@ function App() {
           </Footer> */}
           <Toggle theme={theme} toggleTheme={themeToggler} />
           <button onClick={handleClick}>print ua</button>
+          {/* <button onClick={handleSecondClick}>show ua</button> */}
+          {initial}
         </div>
       </>
     </ThemeProvider>
