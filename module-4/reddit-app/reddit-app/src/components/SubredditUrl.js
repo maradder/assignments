@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import { SubredditName } from "./StyledComponents";
-import { SubscriptionsContext } from "../context/Context";
+import { Context } from "../context/Context";
 
 const SubredditUrl = (props) => {
   const subreddit = props.props;
   const otherRequester = props.username;
-  const { setSubscribedSubreddits } = useContext(SubscriptionsContext);
+  const { setSubscribedSubreddits } = useContext(Context);
 
   const [isDeleteClicked, setIsDeleteClicked] = useState(false);
   const [subToUnsubscribe] = useState(subreddit.display_name);

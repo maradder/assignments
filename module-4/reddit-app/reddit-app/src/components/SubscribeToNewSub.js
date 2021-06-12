@@ -45,7 +45,7 @@ const SubscribeToNewSub = () => {
         minHeight: "100px",
         display: "flex",
         flexDirection: "column",
-        margin: "50px auto 0 auto",
+        margin: "30px auto 0 auto",
       }}
     >
       <h3>Subscribe to new subreddit</h3>

@@ -2,14 +2,13 @@ import React, { useEffect, useContext } from "react";
 import Toggle from "./components/Toggler";
 import Main from "./components/Main";
 import SubredditUrlList from "./components/SubredditUrlList";
-import ClearFavesButton from "./components/ClearFavesButton";
-import SignOutButton from "./components/SignOutButton";
+import { ClearFavesButton, SignOutButton } from "./components/Buttons";
 import SubscribeToNewSub from "./components/SubscribeToNewSub";
 import { useLocation } from "react-router";
-import { SubscriptionsContext } from "./context/Context";
+import { Context } from "./context/Context";
 
 const Settings = (props) => {
-  const { setCurrentLocation } = useContext(SubscriptionsContext);
+  const { setCurrentLocation } = useContext(Context);
   const location = useLocation();
 
   useEffect(() => {
@@ -26,14 +25,15 @@ const Settings = (props) => {
       <SubscribeToNewSub />
       <div
         style={{
+          boxSizing: "border-box",
           minHeight: "150px",
           maxHeight: "150px",
           width: "50vw",
           display: "flex",
           flexDirection: "column",
-          margin: "auto",
+          margin: "48px auto 65px auto",
           alignItems: "center",
-          alignSelf: "flex-end",
+          alignSelf: "flex-start",
         }}
       >
         <ClearFavesButton />

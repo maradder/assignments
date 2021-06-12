@@ -2,13 +2,11 @@ import React, { useEffect, useContext } from "react";
 import Main from "./components/Main";
 import PostCard from "./components/PostCard";
 import { useLocation } from "react-router";
-import { FeedContext } from "./context/Context";
-import { SubscriptionsContext } from "./context/Context";
+import { Context } from "./context/Context";
 
 const Home = (props) => {
-  const { setCurrentLocation } = useContext(SubscriptionsContext);
   const location = useLocation();
-  const { posts } = useContext(FeedContext);
+  const { posts, setCurrentLocation } = useContext(Context);
 
   useEffect(() => {
     setCurrentLocation(location.pathname);

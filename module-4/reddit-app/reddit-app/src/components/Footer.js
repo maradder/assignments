@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Button from "./Button";
-import { SubscriptionsContext } from "../context/Context";
-import { LiHeader, UlHeader } from "./StyledComponents";
-import { Link } from "react-router-dom";
+import { ButtonOne, ButtonTwo } from "./Buttons";
+import { Context } from "../context/Context";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -17,40 +15,16 @@ const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.secondary};
 `;
 
-const FooterButtonStyle = {
-  width: "100%",
-  height: "100%",
-  borderRadius: "0",
-  alignItems: "center",
-  justifyContent: "center",
-};
-const handleFooterButtonClick = () => window.scrollTo(window.top);
-
 const Footer = (props) => {
-  const { currentLocation } = useContext(SubscriptionsContext);
-
-  const buttonOne = () => {
-    return (
-      <Button style={FooterButtonStyle} onClick={handleFooterButtonClick}>
-        <UlHeader>Click to go back to the top</UlHeader>
-      </Button>
-    );
-  };
-  const buttonTwo = () => {
-    return (
-      <Link to={"/"} style={FooterButtonStyle}>
-        <UlHeader>Click to go back home</UlHeader>
-      </Link>
-    );
-  };
+  const { currentLocation } = useContext(Context);
 
   const FooterButton = () => {
     return currentLocation === "/"
-      ? buttonOne()
+      ? ButtonOne()
       : currentLocation === "/favorites"
-      ? buttonOne()
+      ? ButtonOne()
       : currentLocation === "/settings"
-      ? buttonTwo()
+      ? ButtonTwo()
       : "error";
   };
 

@@ -17,10 +17,15 @@ const Card = styled.div`
   :first-of-type {
     margin: 25px auto;
   }
+
+  @media screen and (max-width: 700px) {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
 `;
 
 const Title = styled.h3`
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 300;
   text-align: center;
   max-width: 60%;
@@ -40,12 +45,20 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: right;
   width: 100vw;
   margin: 0;
   padding: 0;
   background-color: ${({ theme }) => theme.secondary};
+
+  h1 {
+    color: ${({ theme }) => theme.buttonText};
+    align-self: center;
+    font-weight: 200;
+    letter-spacing: 10.5px;
+    border-bottom: 1px solid ${({ theme }) => theme.buttonText};
+  }
 
   @media screen and (max-width: 450px) {
     font-size: 12px;
@@ -56,10 +69,9 @@ const UlHeader = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: ${({ theme }) => theme.secondary};
-
-  margin: 0;
+  margin: 0 auto 16px auto;
   padding: 0;
   width: 100%;
 
@@ -68,13 +80,6 @@ const UlHeader = styled.ul`
     font-size: 12px;
     width: 40vw;
     font-size: 30px;
-  }
-
-  h1 {
-    color: ${({ theme }) => theme.buttonText};
-    align-self: center;
-    font-weight: 200;
-    letter-spacing: 10.5px;
   }
 `;
 
@@ -110,7 +115,7 @@ const Container = styled.div`
 ////////////// HeaderFixed //////////////////
 const StyledHeaderFixed = styled.header`
   position: fixed;
-  right: 68px;
+  right: 12vw;
   top: 100px;
   height: 500px;
   width: 300px;
@@ -127,6 +132,10 @@ const StyledHeaderFixed = styled.header`
 
   @media screen and (max-width: 450px) {
     font-size: 12px;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1050px) {
+    right: 8vw;
   }
 `;
 
@@ -156,7 +165,7 @@ const UlHeaderFixed = styled.ul`
     font-weight: 200;
     height: 48px;
     letter-spacing: 10.5px;
-    border-bottom: 1px solid #343434;
+    border-bottom: 1px solid ${({ theme }) => theme.buttonText};
   }
 
   i {
@@ -192,9 +201,9 @@ const SubredditName = styled.p`
   }
 `;
 
-////////////// Subreddit URL //////////////////
+////////////// TogglerDiv //////////////////
 const TogglerDiv = styled.div`
-  min-height: 150px;
+  min-height: 75px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { SubscriptionsContext } from "../context/Context";
+import React, { useContext } from "react";
+import { Context } from "../context/Context";
 import {
   StyledHeaderFixed,
   UlHeaderFixed,
@@ -7,7 +7,7 @@ import {
 } from "./StyledComponents";
 
 const HeaderFixed = (props) => {
-  const { currentLocation } = useContext(SubscriptionsContext);
+  const { currentLocation } = useContext(Context);
 
   const locationName = () => {
     return currentLocation === "/"

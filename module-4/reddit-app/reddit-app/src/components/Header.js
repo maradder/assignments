@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SubscriptionsContext } from "../context/Context";
+import { Context } from "../context/Context";
 import {
   StyledHeader,
   UlHeader,
@@ -8,7 +8,7 @@ import {
 } from "./StyledComponents";
 
 const Header = (props) => {
-  const { currentLocation } = useContext(SubscriptionsContext);
+  const { currentLocation } = useContext(Context);
 
   const locationName = () => {
     return currentLocation === "/"
@@ -22,23 +22,17 @@ const Header = (props) => {
 
   return (
     <StyledHeader>
+      <h1>{locationName()}</h1>
       <UlHeader>
-        <Container>
-          <LiHeader to={props.path1}>
-            <i className="fas fa-cogs"></i>
-          </LiHeader>
-        </Container>
-        <Container>
-          <h1>{locationName()}</h1>
-        </Container>
-        <Container>
-          <LiHeader to={props.path2} onClick={props.action}>
-            <i className="fas fa-star"></i>
-          </LiHeader>
-          <LiHeader to={props.path3}>
-            <i className="fas fa-home"></i>
-          </LiHeader>
-        </Container>
+        <LiHeader to={props.path1}>
+          <i className="fas fa-cogs"></i>
+        </LiHeader>
+        <LiHeader to={props.path2} onClick={props.action}>
+          <i className="fas fa-star"></i>
+        </LiHeader>
+        <LiHeader to={props.path3}>
+          <i className="fas fa-home"></i>
+        </LiHeader>
       </UlHeader>
       {props.children}
     </StyledHeader>

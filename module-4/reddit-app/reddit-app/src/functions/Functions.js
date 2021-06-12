@@ -1,5 +1,3 @@
-import otherRequester from "../user";
-
 export const isImageInUrl = (url) => {
   return (
     url.substring(url.lastIndexOf(".") + 1) === "jpg" ||

@@ -1,6 +1,6 @@
 import React from "react";
 import { func } from "prop-types";
-import Button from "./Button";
+import { Button } from "./Buttons";
 import { TogglerDiv } from "./StyledComponents";
 
 const Toggle = ({ theme, toggleTheme }) => {

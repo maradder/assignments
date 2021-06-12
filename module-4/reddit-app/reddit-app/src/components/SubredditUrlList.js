@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import SubredditUrl from "./SubredditUrl";
-import { SubscriptionsContext } from "../context/Context";
+import { Context } from "../context/Context";
 import otherRequester from "../user";
 
 const SubredditUrlList = () => {
-  const { subscribedSubreddits, setSubscribedSubreddits } = useContext(
-    SubscriptionsContext
-  );
+  const { subscribedSubreddits, setSubscribedSubreddits } = useContext(Context);
 
   return (
     <div style={{ minHeight: "150px" }}>
