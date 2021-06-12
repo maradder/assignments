@@ -1,19 +1,14 @@
 import React from "react";
-import { func, string } from "prop-types";
-import styled from "styled-components";
-
-const Button = styled.button`
-  background: ${({ theme }) => theme.background};
-  border: 2px solid ${({ theme }) => theme.toggleBorder};
-  color: ${({ theme }) => theme.text};
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  padding: 0.6rem;
-`;
+import { func } from "prop-types";
+import Button from "./Button";
+import { TogglerDiv } from "./StyledComponents";
 
 const Toggle = ({ theme, toggleTheme }) => {
-  return <Button onClick={toggleTheme}>Switch Theme</Button>;
+  return (
+    <TogglerDiv>
+      <Button onClick={toggleTheme}>Toggle Day/Night Theme</Button>
+    </TogglerDiv>
+  );
 };
 
 const useToggle = () => {
@@ -21,7 +16,7 @@ const useToggle = () => {
 };
 
 Toggle.propTypes = {
-  theme: string.isRequired,
+  // theme: string.isRequired,
   toggleTheme: func.isRequired,
 };
 

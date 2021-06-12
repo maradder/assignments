@@ -1,44 +1,75 @@
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import { Card, Title, InfoBar } from "./StyledComponents";
+import otherRequester from "../user";
 
-const Card = styled.div`
-  background-color: yellow;
-`;
+const PostCard = (post) => {
+  const [vote, setVote] = useState(null);
+  const checkForImageInUrl = (url) => {
+    return (
+      url.substring(url.lastIndexOf(".") + 1) === "jpg" ||
+      url.substring(url.lastIndexOf(".") + 1) === "png" ||
+      url.substring(url.lastIndexOf(".") + 1) === "gif"
+    );
+  };
+  let postData = post.postdetails;
+  let dataId = post.postdetails.id;
+  let voteTarget = otherRequester.getSubmission(dataId);
 
-const ImageContainer = styled.img`
-  max-height: 30vh;
-`;
+  const handleVote = (e) => {
+    let dataKey = e.target.getAttribute("data-key");
+    vote === null ? setVote(dataKey) : setVote(null);
+    dataKey === "upvote"
+      ? voteTarget.upvote()
+      : dataKey === "downvote"
+      ? voteTarget.downvote()
+      : console.log("novote");
 
-const InfoBar = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+    return console.log(`${dataKey}  ${dataId}`);
+  };
 
-const UpVote = styled.i``;
-const DownVote = styled.i``;
-
-const Star = styled.i``;
-
-const post = {
-  title: "sample title",
-  imgUrl: "sample URL",
-  upVoteCount: 45,
-  downVoteCount: 3,
-  op: "u/sample",
-  subreddit: "r/tech",
-  favorited: false,
-};
-
-const PostCard = () => {
+  useEffect(() => {
+    voteTarget
+      .refresh()
+      .then((Listing) => () => (postData.ups = Listing.data.ups));
+    return () => {
+      console.log("Voted and Refreshed");
+    };
+  }, [vote]);
   return (
-    <Card>
-      <h3>{post.title}</h3>
-      <ImageContainer src={post.imgUrl} alt={"Reddit Post"} />
+    <Card data-tag={dataId}>
+      <Title>{postData.title}</Title>
+      <p>{postData.subreddit_name_prefixed}</p>
+      <a href={postData.url}>
+        <img
+          src={
+            checkForImageInUrl(postData.url) === true
+              ? postData.url
+              : postData.thumbnail
+          }
+          alt={`Reddit ${postData.title}`}
+          style={{ width: "100%", maxHeight: "auto", minHeight: "200px" }}
+        />
+      </a>
       <InfoBar>
-        <UpVote />
-        <DownVote />
-        <p>{post.oc}</p>
-        <Star favorited={post.favorited} />
+        <p className="UpVote">
+          <i
+            data-key="upvote"
+            className="far fa-thumbs-up"
+            onClick={handleVote}
+          />
+          {postData.ups}
+        </p>
+        <p className="DownVote">
+          <i
+            data-key="downvote"
+            className="far fa-thumbs-down"
+            onClick={handleVote}
+          />
+          {postData.downs}
+        </p>
       </InfoBar>
     </Card>
   );
 };
+
+export default PostCard;

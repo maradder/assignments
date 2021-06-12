@@ -1,84 +1,86 @@
-import React, { useState, useEffect} from "react";
-import { useDarkMode } from "./components/useDarkMode";
-import axios from "axios";
+import React, { useContext, useState, useEffect } from "react";
+import { useDarkMode } from "./hooks/useDarkMode";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/GlobalStyles";
-import Toggle from "./components/Toggler";
+import Home from "./Home";
+import Favorites from "./Favorites";
+import Settings from "./Settings";
+import Header from "./components/Header";
+import HeaderFixed from "./components/HeaderFixed";
+import { SubscriptionsContext, FeedContext } from "./context/Context";
 import { lightTheme, darkTheme } from "./components/Themes";
-import {secrets} from './.secrets.js'
-import { Submission, Listing } from "snoowrap";
-const snoowrap = require("snoowrap");
-let initial
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Footer from "./components/Footer";
+import otherRequester from "./user";
 
 function App() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
-  const [sport, setSports] = useState(['hello'])
-  const ua = navigator.userAgent;
-  
-  
-  const otherRequester = new snoowrap({
-    userAgent: ua,
-    clientId: secrets.clientId,
-    clientSecret: secrets.clientSecret,
-    username: secrets.username,
-    password: secrets.password
-  });
-  
-  // const getInitial = () => otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => (<div>{Submission.media_embed}</div>)))
-  const getInitial = () => otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => setSports(prevState => [...prevState, Submission])))
+  const {
+    getHotFromSub,
+    getSavedContent,
+    windowSize,
+    setWindowSize,
+  } = useContext(FeedContext);
+  const { setSubscribedSubreddits, currentLocation } = useContext(
+    SubscriptionsContext
+  );
 
-  const handleClick = () => getInitial()
+  const getSaved = () =>
+    otherRequester.getMe().getSavedContent().then(console.log);
 
-  // useEffect(() => {
-    // const initial = otherRequester.getSubreddit('sports').getHot().then(Listing => Listing.map(Submission => (<div>{Submission.media_embed}</div>)))}, [])
+  const getSubscriptions = () =>
+    otherRequester
+      .getSubscriptions()
+      .then((Listing) => setSubscribedSubreddits([...Listing]));
+
+  window.onresize = () => {
+    setWindowSize(window.screen.availWidth);
+  };
+
+  useEffect(() => {
+    getHotFromSub("pics");
+    getSavedContent();
+    getSubscriptions();
+    return () => {
+      console.log("got initial");
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={themeMode}>
-      <>
-        <GlobalStyles />
-        <div className="App">
-          {/* <Header> 
-            <Link path="/settings"/>  
-            <h1>{currentView.title}</h1>
-            <Link path="/favorites"/>
-            <Link path="/"/>
-          </Header>
+      <GlobalStyles windowsize={windowSize} />
+      <Router>
+        {windowSize < 850 ? (
+          <Header
+            path1="/settings"
+            path2="/favorites"
+            action2={getSaved}
+            path3="/"
+            currentlocation={currentLocation}
+          />
+        ) : (
+          <HeaderFixed
+            path1="/settings"
+            path2="/favorites"
+            action2={getSaved}
+            path3="/"
+            currentlocation={currentLocation}
+          />
+        )}
+        <Switch>
           <Route path="/settings">
-            <main>
-              <SettingsContainer>
-                <h3>Unsubscribe from subreddits</h3>
-                  {list of subreddits (click to unsubscribe)}
-              </SettingsContainer>
-              <Button onClick={clearFavorites}>Clear Favorites</Button>
-              <Button onClick={signOut}>Sign Out of Reddit</Button>
-              <SettingsContainer>
-          <input
-            onKeyPress={(e) =>
-              e.key === "Enter" ? console.log(e.target.value) : handleChange()
-            }
-          />              
-          </SettingsContainer>
-            </main>
+            <Settings themetoggler={themeToggler} />
           </Route>
           <Route path="/favorites">
-            <main>
-             <FavoritesList/>
-            </main>
+            <Favorites />
           </Route>
           <Route path="/">
-            <main>
-              <MainFeedList/>
-            </main>
+            <Home />
           </Route>
-          <Footer>
-            <Button onClick={scroll to top}>Back to Top</Button>
-          </Footer> */}
-          <Toggle theme={theme} toggleTheme={themeToggler} />
-          <button onClick={handleClick}>print ua</button>
-          {/* <button onClick={handleSecondClick}>show ua</button> */}
-          {initial}
-        </div>
-      </>
+        </Switch>
+        <Footer />
+      </Router>
     </ThemeProvider>
   );
 }
