@@ -26,7 +26,7 @@ const FooterButton = styled.button`
   color: ${({ theme }) => theme.buttonText};
   border-radius: 0;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 18px;
   padding: 0.6rem;
 `;
 

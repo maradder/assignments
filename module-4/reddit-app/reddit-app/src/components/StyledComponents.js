@@ -6,8 +6,8 @@ const Card = styled.div`
   background-color: none;
   border: 1px solid #ffffff;
   border-radius: 8px;
-  min-width: 40vw;
-  max-width: 40vw;
+  min-width: 50vw;
+  max-width: 50vw;
   margin: 100px auto;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ const Card = styled.div`
     margin: 25px auto;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1000px) {
     min-width: 80vw;
     max-width: 80vw;
   }
@@ -134,7 +134,7 @@ const StyledHeaderFixed = styled.header`
     font-size: 12px;
   }
 
-  @media screen and (min-width: 750px) and (max-width: 1050px) {
+  @media screen and (min-width: 100px) and (max-width: 1250px) {
     right: 8vw;
   }
 `;

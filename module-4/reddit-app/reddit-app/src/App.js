@@ -50,7 +50,7 @@ function App() {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles windowsize={windowSize} />
       <Router>
-        {windowSize < 850 ? (
+        {windowSize < 1000 ? (
           <Header
             path1="/settings"
             path2="/favorites"

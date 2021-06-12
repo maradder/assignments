@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    display: ${(props) => (props.windowsize > 850 ? "grid" : "flex")};
+    display: ${(props) => (props.windowsize > 999 ? "grid" : "flex")};
     grid-template-columns: 66% 33%;
     margin: 0;
     padding: 0;
