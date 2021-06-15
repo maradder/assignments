@@ -14,6 +14,18 @@ const Button = styled.button`
   padding: 0.6rem;
 `;
 
+const SubmitButton = styled.button`
+  display: flex;
+  margin: 25px auto;
+  background-color: ${({ theme }) => theme.altButton};
+  border: 2px solid ${({ theme }) => theme.toggleBorder};
+  color: ${({ theme }) => theme.buttonText};
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.6rem;
+`;
+
 const FooterButton = styled.button`
   display: flex;
   margin: 25px auto;
@@ -82,4 +94,11 @@ const ButtonTwo = () => {
   );
 };
 
-export { SignOutButton, Button, ButtonOne, ButtonTwo, ClearFavesButton };
+export {
+  SignOutButton,
+  Button,
+  ButtonOne,
+  SubmitButton,
+  ButtonTwo,
+  ClearFavesButton,
+};

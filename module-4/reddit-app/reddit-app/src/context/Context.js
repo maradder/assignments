@@ -6,10 +6,24 @@ const ContextProvider = (props) => {
   const [subredditDisplayNames, setSubredditDisplayNames] = useState([]);
   const [posts, setPosts] = useState([]);
   const [savedContent, setSavedContent] = useState([]);
+  const [windowSize, setWindowSize] = useState(window.screen.availWidth);
+  const [subscribedSubreddits, setSubscribedSubreddits] = useState([
+    "subscribedSubreddits",
+  ]);
+  const [currentLocation, setCurrentLocation] = useState("");
+  const [selected, setSelected] = useState("popular");
 
-  const getHotFromSub = (sub) =>
+  const getSaved = () =>
+    otherRequester.getMe().getSavedContent().then(console.log);
+
+  const getSubscriptions = () =>
     otherRequester
-      .getSubreddit(sub)
+      .getSubscriptions()
+      .then((Listing) => setSubscribedSubreddits([...Listing]));
+
+  const getHotFromSub = () =>
+    otherRequester
+      .getSubreddit(selected)
       .getHot()
       .then((Listing) => setPosts([...Listing]));
 
@@ -20,21 +34,18 @@ const ContextProvider = (props) => {
       .then((Listing) => setSavedContent([...Listing]));
   };
 
-  const [windowSize, setWindowSize] = useState(window.screen.availWidth);
-
-  const [subscribedSubreddits, setSubscribedSubreddits] = useState([
-    "subscribedSubreddits",
-  ]);
-  const [currentLocation, setCurrentLocation] = useState("");
-
   return (
     <Context.Provider
       value={{
         getHotFromSub,
         getSavedContent,
+        getSaved,
+        getSubscriptions,
         savedContent,
         subredditDisplayNames,
         setSubredditDisplayNames,
+        selected,
+        setSelected,
         posts,
         setPosts,
         windowSize,

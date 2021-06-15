@@ -22,23 +22,16 @@ function App() {
     windowSize,
     setWindowSize,
     setSubscribedSubreddits,
+    getSubscriptions,
     currentLocation,
   } = useContext(Context);
-
-  const getSaved = () =>
-    otherRequester.getMe().getSavedContent().then(console.log);
-
-  const getSubscriptions = () =>
-    otherRequester
-      .getSubscriptions()
-      .then((Listing) => setSubscribedSubreddits([...Listing]));
 
   window.onresize = () => {
     setWindowSize(window.innerWidth);
   };
 
   useEffect(() => {
-    getHotFromSub("pics");
+    getHotFromSub();
     getSavedContent();
     getSubscriptions();
     return () => {
@@ -50,23 +43,12 @@ function App() {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles windowsize={windowSize} />
       <Router>
-        {windowSize < 1000 ? (
-          <Header
-            path1="/settings"
-            path2="/favorites"
-            action2={getSaved}
-            path3="/"
-            currentlocation={currentLocation}
-          />
-        ) : (
-          <HeaderFixed
-            path1="/settings"
-            path2="/favorites"
-            action2={getSaved}
-            path3="/"
-            currentlocation={currentLocation}
-          />
-        )}
+        <Header
+          path1="/settings"
+          path2="/favorites"
+          path3="/"
+          currentlocation={currentLocation}
+        />
         <Switch>
           <Route path="/settings">
             <Settings themetoggler={themeToggler} />

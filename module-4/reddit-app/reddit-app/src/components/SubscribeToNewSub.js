@@ -1,64 +1,59 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState, useContext } from "react";
+import useCounter from "../hooks/useCounter";
+import { Context } from "../context/Context";
+import { Input, SubredditTitle, ThinButton, Form } from "./StyledComponents";
+import { Button, SubmitButton } from "./Buttons";
 import otherRequester from "../user";
 
-const Input = styled.input`
-  display: flex;
-  margin: auto;
-  border: 2px solid ${({ theme }) => theme.toggleBorder};
-  color: ${({ theme }) => theme.text};
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  padding: 0.6rem;
-  width: 70%;
-  justify-content: center;
-  text-align: center;
-  background-color: #ffffff32;
-
-  :active,
-  :focus-within {
-    outline: 1px solid #39ff14;
-  }
-
-  ::placeholder {
-    color: ${({ theme }) => theme.placeholder};
-  }
-`;
-const SubscribeToNewSub = () => {
+const SubscribeToNewSub = (props) => {
   const [newSub2Subscribe, setNewSub2Subscribe] = useState("");
-
+  const { count, increment } = useCounter(0);
+  const { setSubscribedSubreddits, getSubscriptions } = useContext(Context);
   const handleChange = (e) => {
-    let value = e.target.value;
-    setNewSub2Subscribe((prevState) => (prevState, value));
+    setNewSub2Subscribe(e.target.value);
     console.log(newSub2Subscribe);
   };
 
-  const handleNewSubscription = () => {
-    otherRequester.getSubreddit(newSub2Subscribe).subscribe();
-    setNewSub2Subscribe();
+  // const getSubscriptions = props.refresh;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    newSub2Subscribe === ""
+      ? alert("This field cannot be left empty")
+      : otherRequester
+          .getSubreddit(newSub2Subscribe)
+          .subscribe()
+          .then(console.log);
+    setNewSub2Subscribe("");
+    // setSubscribedSubreddits([]);
+    increment();
+    setTimeout(getSubscriptions, 10);
+    console.log(count);
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100px",
-        display: "flex",
-        flexDirection: "column",
-        margin: "30px auto 0 auto",
-      }}
-    >
-      <h3>Subscribe to new subreddit</h3>
+    <Form onSubmit={handleSubmit}>
+      <h3
+        style={{
+          fontWeight: "200",
+          textTransform: "uppercase",
+          width: "150%",
+          alignSelf: "center",
+        }}
+      >
+        Subscribe to new subreddit
+      </h3>
 
       <Input
         name="newSub2Subscribe"
-        placeholder="r/newSubReddit"
-        defaultValue=""
-        onKeyPress={(e) =>
-          e.key === "Enter" ? handleNewSubscription() : handleChange(e)
-        }
+        placeholder="newSubReddit"
+        value={newSub2Subscribe}
+        onChange={handleChange}
       />
-    </div>
+      <SubmitButton type="submit" style={{ marginTop: "8px" }}>
+        Subscribe
+      </SubmitButton>
+    </Form>
   );
 };
 
