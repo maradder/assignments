@@ -18,3 +18,13 @@
 # Nodemon
 
     *npm install -g nodemon
+
+# uuid add UUID to simulate unique ids
+
+# Express Router - Enables us to modularize our server
+
+# Express parameters (Placeholders)
+
+    * base url amazon.com
+    * end point amazon.com/pictures
+    * parameters amazon.com/pictures/dksfoisdlfi
