@@ -30,11 +30,11 @@ const Form = () => {
       description: formState.description,
       imgUrl: formState.imgUrl,
     };
-    setNewUglyThing({
-      title: `${formState.title}`,
-      description: `${formState.description}`,
-      imgUrl: `${formState.imgUrl}`,
-    });
+    // setNewUglyThing({
+    //   title: `${formState.title}`,
+    //   description: `${formState.description}`,
+    //   imgUrl: `${formState.imgUrl}`,
+    // });
 
     axios.post("https://api.vschool.io/marcusradder/thing/", newItem);
 
