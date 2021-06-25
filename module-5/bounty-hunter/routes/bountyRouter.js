@@ -68,7 +68,7 @@ bountyRouter.delete("/:bountyId", (req, res) => {
 	console.log(bountyId)
 	const bountyIndex = bounties.findIndex((bounty) => bounty._id === bountyId)
 	bounties.splice(bountyIndex, 1)
-	res.send("Successfully deleted the bounty")
+	res.send(`Successfully deleted ${bountyId}`)
 })
 
 module.exports = bountyRouter
