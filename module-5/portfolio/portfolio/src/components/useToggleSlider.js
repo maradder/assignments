@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { Context } from "../context/context"
 import { lightTheme, darkTheme } from "../components/Themes"
 
 const useToggleSlider = (props) => {

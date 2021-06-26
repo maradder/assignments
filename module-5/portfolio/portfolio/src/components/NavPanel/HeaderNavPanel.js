@@ -1,15 +1,15 @@
-import React, { useState, useContext, useEffect } from "react"
-import { HeaderNavBox, List, ListItem, StyledLink } from "../StyledComponents"
+import React, { useContext } from "react"
+import { HeaderNavBox, StyledLink } from "../StyledComponents"
 import { Context } from "../../context/context"
 import useToggleSlider from "../useToggleSlider"
+import "./NavPanel.css"
 
 const HeaderNavPanel = (props) => {
-	const contactRef = props.thing
 	const { setThemeState } = useContext(Context)
 	const { toggleSliderState, ToggleSlider } = useToggleSlider()
 	setThemeState(toggleSliderState)
 	return (
-		<HeaderNavBox>
+		<HeaderNavBox scroll={props.scroll}>
 			<ToggleSlider />
 			<ul>
 				<StyledLink
@@ -19,7 +19,7 @@ const HeaderNavPanel = (props) => {
 					smooth={true}
 					duration={1000}
 				>
-					<ListItem>Profile</ListItem>
+					<li>Profile</li>
 				</StyledLink>
 				<StyledLink
 					activeClass=""
@@ -28,7 +28,7 @@ const HeaderNavPanel = (props) => {
 					smooth={true}
 					duration={1000}
 				>
-					<ListItem>Experience</ListItem>
+					<li>Experience</li>
 				</StyledLink>
 				<StyledLink
 					activeClass=""
@@ -37,7 +37,7 @@ const HeaderNavPanel = (props) => {
 					smooth={true}
 					duration={1000}
 				>
-					<ListItem>Skills</ListItem>
+					<li>Skills</li>
 				</StyledLink>
 				<StyledLink
 					activeClass=""
@@ -46,7 +46,7 @@ const HeaderNavPanel = (props) => {
 					smooth={true}
 					duration={1000}
 				>
-					<ListItem>Portfolio</ListItem>
+					<li>Portfolio</li>
 				</StyledLink>
 				<StyledLink
 					activeClass=""
@@ -55,7 +55,7 @@ const HeaderNavPanel = (props) => {
 					smooth={true}
 					duration={1000}
 				>
-					<ListItem>Contact</ListItem>
+					<li>Contact</li>
 				</StyledLink>
 			</ul>
 			<p

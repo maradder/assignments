@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react"
-import { lightTheme, darkTheme } from "../components/Themes"
 
 const Context = createContext()
 const ContextProvider = (props) => {

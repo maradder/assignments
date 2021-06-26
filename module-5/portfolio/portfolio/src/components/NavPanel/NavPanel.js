@@ -1,17 +1,17 @@
-import React, { useState, useContext, useEffect } from "react"
-import { NavBox, List, ListItem, StyledLink } from "../StyledComponents"
+import React, { useContext } from "react"
+import { NavBox, ListItem, StyledLink } from "../StyledComponents"
 import { Context } from "../../context/context"
 import useToggleSlider from "../useToggleSlider"
 
 const NavPanel = (props) => {
-	const contactRef = props.thing
 	const { setThemeState } = useContext(Context)
 	const { toggleSliderState, ToggleSlider } = useToggleSlider()
 	setThemeState(toggleSliderState)
 	return (
-		<NavBox>
+		<NavBox scroll={props.scroll}>
 			<ToggleSlider />
 			<ul>
+				<p>{props.number}</p>
 				<StyledLink
 					activeClass=""
 					to="about"

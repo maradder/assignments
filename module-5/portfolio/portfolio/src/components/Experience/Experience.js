@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import SectionContainer from "../SectionContainer"
 
 const Experience = (props) => {
-	return <SectionContainer heading="Experience" id="experience" />
+	return (
+		<SectionContainer
+			heading="Experience"
+			id="experience"
+			className="sectionContainer"
+		/>
+	)
 }
 
 export default Experience

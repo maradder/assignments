@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import SectionContainer from "../SectionContainer"
-import SocialMediaLinks from "../SocialMediaLinks"
 import {
 	SocialChip,
-	SocialContainer,
 	ContentContainer,
+	LinkContainer,
 	Form,
 	Input,
 	LargeInput,
@@ -21,7 +20,7 @@ import { Context } from "../../context/context"
 // import "tippy.js/dist/tippy.css" // optional
 
 const Contact = React.forwardRef((props, ref) => {
-	const { themeState, setThemeState } = useContext(Context)
+	const { themeState } = useContext(Context)
 	const initMessage = {
 		name: "",
 		email: "",
@@ -42,37 +41,17 @@ const Contact = React.forwardRef((props, ref) => {
 		return setEmailMessage(initMessage)
 	}
 	return (
-		<SectionContainer heading="Contact" id="contact" ref={ref}>
-			<SocialContainer>
-				<ToolTip content={<p className="gold">Connect with me on LinkedIn</p>}>
-					<SocialChip
-						style={{ gridRowStart: "3", gridColumnStart: "2" }}
-						id="linkedIn"
-						href="https://www.linkedin.com/in/marcusradder/"
-					>
-						<img
-							src={`${LinkedIn}`}
-							alt="Link to LinkedIn"
-							style={{ height: "48px", margin: "auto" }}
-						/>
-					</SocialChip>
-				</ToolTip>
-				<ToolTip content={<p>See my code on GitHub</p>}>
-					<SocialChip
-						style={{ gridRowStart: "3", gridColumnStart: "3" }}
-						href="https://github.com/maradder"
-						id="github"
-					>
-						<img
-							src={`${themeState ? GitHubLight : GitHub}`}
-							alt="Link to GitHub"
-							style={{ height: "48px", margin: "auto" }}
-						/>
-					</SocialChip>
-				</ToolTip>
-			</SocialContainer>
-
-			<ContentContainer gridrowstart={3} gridcolumnstart={4}>
+		<SectionContainer
+			heading="Contact"
+			id="contact"
+			ref={ref}
+			className="sectionContainer"
+		>
+			<ContentContainer
+				gridrowstart={3}
+				gridcolumnstart={4}
+				style={{ marginBottom: "75px" }}
+			>
 				<Form onSubmit={() => console.log(emailMessage)}>
 					<label htmlFor="name">
 						<p>Name</p>
@@ -122,6 +101,30 @@ const Contact = React.forwardRef((props, ref) => {
 					</div>
 				</Form>
 			</ContentContainer>
+			<LinkContainer>
+				<ToolTip content={<p className="gold">Connect with me on LinkedIn</p>}>
+					<SocialChip
+						id="linkedIn"
+						href="https://www.linkedin.com/in/marcusradder/"
+					>
+						<img
+							src={`${LinkedIn}`}
+							alt="Link to LinkedIn"
+							style={{ height: "48px", margin: "auto" }}
+						/>
+					</SocialChip>
+				</ToolTip>
+				<ToolTip content={<p>See my code on GitHub</p>}>
+					<SocialChip href="https://github.com/maradder" id="github">
+						<img
+							// src={`${themeState ? GitHubLight : GitHub}`}
+							src={GitHubLight}
+							alt="Link to GitHub"
+							style={{ height: "48px", margin: "auto" }}
+						/>
+					</SocialChip>
+				</ToolTip>
+			</LinkContainer>
 		</SectionContainer>
 	)
 })

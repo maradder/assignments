@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { SectionContainerStyle, textColor } from "./StyledComponents"
 
 const SectionContainer = (props) => {
@@ -7,14 +7,32 @@ const SectionContainer = (props) => {
 			<h1
 				style={{
 					width: "100vw",
-					gridRow: "1/2",
 					margin: "24px auto 24px 24px",
 					borderBottom: `1px solid' ${textColor}`,
 				}}
 			>
 				{props.heading}
 			</h1>
-			{props.children}
+			<div className="sectionSubDiv">
+				<div
+					className="buffer"
+					style={{ minWidth: "17vw", minHeight: "100%" }}
+				></div>
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						paddingBottom: "75px",
+						alignItems: "center",
+					}}
+				>
+					{props.children}
+				</div>
+				<div
+					className="buffer"
+					style={{ minWidth: "17vw", minHeight: "100%" }}
+				></div>
+			</div>
 		</SectionContainerStyle>
 	)
 }

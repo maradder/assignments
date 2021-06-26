@@ -1,6 +1,4 @@
-import React, { useContext } from "react"
-import { HashRouter as Router, Switch, Route } from "react-router-dom"
-import Header from "./components/Header/Header"
+import React, { useContext, useState, useEffect } from "react"
 import HeaderNavPanel from "./components/NavPanel/HeaderNavPanel"
 import NavPanel from "./components/NavPanel/NavPanel"
 import Hero from "./components/Hero/Hero"
@@ -15,19 +13,54 @@ import { Context } from "./context/context"
 import { lightTheme, darkTheme } from "./components/Themes"
 
 function App(props) {
+	const [scrollPosition, setScrollPosition] = useState()
+	const [style, setStyle] = useState({ style: { display: "none" } })
+	const handleScroll = (e) => {
+		let clientHeight = document.documentElement.clientHeight //Viewable area height
+		let scrollTop = document.documentElement.scrollTop //Scroll bar scroll height
+		let scrollHeight = document.documentElement.scrollHeight //Scroll content height
+		setScrollPosition(scrollTop)
+		// if (scrollTop > 15) {
+		// 	setScrollPosition(scrollTop)
+		// } else {
+		// 	setScrollPosition(scrollTop)
+		// }
+		// let res = scrollHeight - scrollTop - clientHeight
+		// if (res <= 500) {
+		// 	setStyle({ styles: { display: "none" } })
+		// 	setScrollPosition(scrollTop)
+		// } else {
+		// 	setStyle({ styles: { display: "block" } })
+		// 	setScrollPosition(scrollTop)
+		// }
+	}
 	const { themeState } = useContext(Context)
 	const contactRef = React.useRef()
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll)
+		return () => {
+			console.log("mounted")
+		}
+	}, [])
 	return (
 		<ThemeProvider theme={themeState ? darkTheme : lightTheme}>
 			<GlobalStyle />
-			<HeaderNavPanel thing={contactRef} />
-			<NavPanel thing={contactRef} />
-			<Hero />
-			<Profile />
-			<Experience />
-			<Skills />
-			<Portfolio />
-			<Contact ref={contactRef} />
+
+			<NavPanel
+				scroll={scrollPosition}
+				number={scrollPosition}
+				thing={contactRef}
+			/>
+			<Hero>
+				{" "}
+				<HeaderNavPanel scroll={scrollPosition} thing={contactRef} />
+			</Hero>
+			<Profile className="sectionContainer" />
+			<Experience className="sectionContainer" />
+			<Skills className="sectionContainer" />
+			<Portfolio className="sectionContainer" />
+			<Contact ref={contactRef} className="sectionContainer" />
 		</ThemeProvider>
 	)
 }

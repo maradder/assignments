@@ -17,19 +17,29 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     color: ${(props) => props.theme.text};
-	transition: all 0.50s linear;
+	/* transition: all 0.50s linear; */
 }
 
+html {
+	scroll-snap-type: both proximity;
 
+}
 body {
-    ${(props) =>
+    /* ${(props) =>
 			props.theme === "lightTheme"
 				? "background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%); background-blend-mode: screen;"
-				: "background-color: black"};
+				: "background-color: black"}; */
 			overflow-x: hidden;
+			max-height: 100vh;
 			max-width:100vw;
+			overflow-y: scroll;
 			
 			
+}
+
+.sectionContainer {
+	scroll-snap-align: start;
+
 }
 
 h1 {
@@ -51,6 +61,10 @@ h5 {
     font-size: 24px;
     font-weight: 300;
     font-style: normal;
+}
+
+li {
+	font-family: "Montserrat", sans-serif;
 }
 
 p {
@@ -83,7 +97,7 @@ button {
 	color: ${(props) => props.theme.buttonText}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 512px) {
 						h1 {
 						font-family: "Lexend Exa", sans-serif;
 						font-size: 48px;
@@ -139,14 +153,15 @@ button {
 `
 
 const HeaderNavBox = styled.nav`
-	position: fixed;
-	top: 0;
 	width: 100vw;
-	height: 125px;
+	height: 150px;
 	margin: 0;
 	position: initial;
-	display: flex;
 	flex-wrap: wrap;
+	display: flex;
+	position: relative;
+	top: ${(props) => (props.scroll >= 20 ? "-100px" : "0")};
+
 	flex-direction: column;
 	justify-content: center;
 	background: ${COLOR_CONTENT_CONTAINER};
@@ -160,17 +175,27 @@ const HeaderNavBox = styled.nav`
 		max-height: 20px;
 		align-items: center;
 		justify-content: center;
+		list-style: none;
 	}
 
 	li {
-		font-size: 16px;
 		line-height: 16px;
 		width: fit-content;
-		margin: auto 5px;
+		margin: auto 2.5rem;
+		color: azure;
+		font-size: 1.6rem;
+		font-weight: 200;
+		text-decoration-line: none;
+		cursor: pointer;
 	}
 
 	p {
-		margin: 0 auto;
+		font-size: 12px;
+		font-weight: 200;
+	}
+
+	@media screen and (max-width: 512px) {
+		display: none;
 	}
 `
 
@@ -178,15 +203,16 @@ const NavBox = styled.nav`
 	position: fixed;
 	top: 11.5rem;
 	min-height: fit-content;
-	right: 4.5rem;
-	display: grid;
-	grid-template-columns: 15rem;
-	grid-template-rows: 3.5rem 5rem 5rem 5rem 5rem 5rem 2.5rem;
+	right: ${(props) => (props.scroll >= 60 ? "4.5rem" : "-45rem")};
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
 	border-radius: 6px;
 	background: ${COLOR_CONTENT_CONTAINER};
 	text-align: center;
 	z-index: 10;
 	box-shadow: 0px 0px 4px ${(props) => props.theme.text};
+	display: ;
 
 	ul {
 		list-style: none;
@@ -195,11 +221,10 @@ const NavBox = styled.nav`
 	li {
 		font-family: "Montserrat", sans-serif;
 		font-weight: 200;
-		font-size: 1.6rem;
+		font-size: 24px;
 		border-radius: 6px;
-		margin: auto;
-		line-height: 4.5rem;
 		width: 15rem;
+		margin: 16px auto;
 		color: azure;
 	}
 
@@ -209,7 +234,7 @@ const NavBox = styled.nav`
 		/* box-shadow: 0.1rem 0.1rem 0.7rem 0.6rem #952e2f; */
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 512px) {
 		width: 100vw;
 		height: 125px;
 		margin: 0;
@@ -268,7 +293,6 @@ const ProfileImage = styled.img`
 	width: 15rem;
 	border-radius: 50%;
 `
-
 const SocialContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -279,22 +303,33 @@ const SocialContainer = styled.div`
 	border: 1px solid #121212;
 	align-items: center;
 	justify-content: center;
+	p {
+		color: azure;
+		/* color: ${(props) => props.theme.altText}; */
+	}
 `
 
 const SocialChip = styled.a`
 	height: 3rem;
 	width: 3rem;
-	color: ${COLOR_CEMENT};
-	margin: auto;
+	p {
+		color: azure;
+		/* color: ${(props) => props.theme.altText}; */
+	}
+	margin: auto 16px;
 	/* background-color: ${COLOR_ROGERS_RED}; */
 `
 
 const StyledLink = styled(Link)`
-	height: 5rem;
+	height: 100%;
 	text-decoration-line: none;
 	cursor: pointer;
+	font-size: 16px;
+	line-height: 16px;
+	width: fit-content;
+	margin: auto 5px;
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 512px) {
 		height: fit-content;
 	}
 `
@@ -302,6 +337,7 @@ const StyledLink = styled(Link)`
 const ListItem = styled.li`
 	list-style: none;
 	height: 100%;
+	color: ${(props) => props.theme.textColor};
 
 	:hover {
 		text-decoration: underline ${COLOR_NAV_HOVER};
@@ -346,10 +382,9 @@ const GreyStar = styled.i`
 const SectionContainerStyle = styled.div`
 	/* position: sticky; */
 	/* top: 0; */
-	display: grid;
-	grid-template-columns: repeat(12, 8.33vw);
-	grid-template-rows: repeat(auto, 10vh);
-	gap: 24px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
 	min-height: 100vh;
 	max-height: fit-content;
 	width: 100vw;
@@ -357,31 +392,136 @@ const SectionContainerStyle = styled.div`
 	box-sizing: border-box;
 	border: 5px solid #243541a0;
 	${(props) => props.theme.background}
+	transition: all 0.50s linear;
 
-	@media screen and (max-width: 500px) {
+	.sectionSubDiv {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	@media screen and (max-width: 320px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 20px;
 		min-height: 100vh;
+
+		.sectionSubDiv {
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+
+		.buffer {
+			display: none;
+		}
+
+		.sectionSubDiv {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+	}
+`
+
+const HeroContainer = styled(SectionContainerStyle)`
+	display: flex;
+	flex-direction: column;
+	transition: all 0.5s linear;
+
+	h1 {
+		width: 900px;
+		height: 120px;
+		margin: 40vh auto 0px 4vw;
+		background-color: transparent;
+		color: ${(props) => props.color};
+		/* opacity: ${(props) => props.opacity}; */
+		transition: color 2s ease-in;
+		animation-duration: 2s;
+		animation-name: slideinRight;
+	}
+
+	h3 {
+		width: 900px;
+		height: 100px;
+		letter-spacing: 1.28px;
+		margin: 0px auto auto 4vw;
+		background-color: transparent;
+		color: ${(props) => props.color};
+		opacity: ${(props) => props.opacity};
+		transition: letter-spacing 2s ease-in;
+		animation-duration: 5s;
+		animation-name: slideinLeft;
+	}
+
+	@keyframes slideinRight {
+		from {
+			margin-left: -100%;
+			width: 300%;
+		}
+
+		to {
+			margin-left: 4vw;
+			width: 100%;
+		}
+	}
+	@keyframes slideinLeft {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (max-width: 512px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+		min-height: 100vh;
+
+		h1 {
+			max-width: 100vw;
+			text-align: center;
+			height: fit-content;
+			margin: 100px auto 0 auto;
+			background-color: transparent;
+		}
+
+		h3 {
+			max-width: 100vw;
+			text-align: center;
+			height: fit-content;
+			letter-spacing: 1.28px;
+			margin: 0 auto 100px auto;
+			background-color: transparent;
+			justify-self: flex-start;
+		}
 	}
 `
 
 const ContentContainer = styled.div`
-	grid-row-start: ${(props) => props.gridrowstart};
-	grid-column-start: ${(props) => props.gridcolumnstart};
+	display: flex;
+	flex-direction: column
+	align-items: center;
+	justify-content: center;
 	height: fit-content;
 	width: fit-content;
 	padding: 48px;
 	border-radius: 6px;
 	background-color: ${COLOR_CONTENT_CONTAINER};
 	box-shadow: 0px 0px 4px ${(props) => props.theme.text};
+	transition: all 0.5s linear;
 
+	h3,
 	p {
-		color: ${(props) => props.theme.altText};
+		color: azure;
+		/* color: ${(props) => props.theme.altText}; */
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 512px) {
 		margin: auto;
 	}
 `
@@ -396,18 +536,23 @@ const StyledHeader = styled.header`
 	background: radial-gradient(#243541, #121b21);
 	color: white;
 `
+const LinkContainer = styled(ContentContainer)`
+	@media screen and (min-width: 512px) and (max-width: 1200px) {
+		width: 
+		margin: auto;
+		background-color: pink;
+	}
+`
 
 // Contact Section
-const inputWidth = "540px"
 const Input = styled.input`
 	height: 40px;
-	width: ${inputWidth};
+	width: 540px;
 	margin-bottom: 24px;
 	padding: 0 4px;
 	color: ${COLOR_DARK_TEXT};
 	font-family: "Montserrat", sans-serif;
-
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 512px) {
 		height: 40px;
 		width: 70vw;
 		margin-bottom: 24px;
@@ -416,8 +561,8 @@ const Input = styled.input`
 `
 const LargeInput = styled.textarea`
 	height: 175px;
-	max-width: ${inputWidth};
-	min-width: ${inputWidth};
+	max-width: 540px;
+	min-width: 540px;
 	margin-bottom: 24px;
 	word-wrap: break-word;
 	padding: 4px;
@@ -425,7 +570,7 @@ const LargeInput = styled.textarea`
 	font-size: 16px;
 	font-family: "Montserrat", sans-serif;
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 512px) {
 		height: 175px;
 		max-width: 70vw;
 		min-width: 70vw;
@@ -442,9 +587,11 @@ export {
 	GreenStar,
 	GreyStar,
 	ContentContainer,
+	LinkContainer,
 	ImageContainerRound,
 	ProfileImage,
 	HeaderNavBox,
+	HeroContainer,
 	NavBox,
 	Input,
 	Form,

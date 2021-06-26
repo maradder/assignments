@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import {
 	GreenStar,
 	GreyStar,
@@ -19,23 +19,17 @@ const Skills = (props) => {
 	]
 
 	const toolsList = [
-		{ skill: "Firefox", level: 2 },
-		{ skill: "MS Office", level: 2 },
-		{ skill: "Mac", level: 2 },
-		{ skill: "Notepad++", level: 2 },
+		{ skill: "Windows", level: 4 },
+		{ skill: "Figma", level: 4 },
+		{ skill: "MS Office", level: 4 },
+		{ skill: "Mac", level: 3 },
+		{ skill: "Firefox", level: 3 },
+		{ skill: "Notepad++", level: 3 },
 		{ skill: "Webkit browsers", level: 2 },
-		{ skill: "Windows", level: 2 },
-		{ skill: "Adobe Fireworks", level: 2 },
 		{ skill: "Atlassian / Jira", level: 2 },
-		{ skill: "Coda2", level: 2 },
-		{ skill: "Git / Git Flow", level: 2 },
+		{ skill: "Git", level: 2 },
 		{ skill: "Internet Explore", level: 2 },
-		{ skill: "MAMP", level: 2 },
-		{ skill: "PHPStorm", level: 2 },
-		{ skill: "Sublime Text", level: 2 },
-		{ skill: "Subversion", level: 2 },
-		{ skill: "Adobe Photoshop", level: 2 },
-		{ skill: "Figma", level: 2 },
+		{ skill: "Affinity Photo", level: 2 },
 	]
 
 	const skillStars = (level) => {
@@ -77,8 +71,24 @@ const Skills = (props) => {
 	}
 
 	return (
-		<SectionContainer heading="Skills" id="skills">
-			<ContentContainer style={{ gridRow: "4/5", gridColumnStart: "3" }}>
+		<SectionContainer
+			heading="Skills"
+			id="skills"
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				minHeight: "100vh",
+				maxHeight: "fit-content",
+			}}
+		>
+			<ContentContainer
+				style={{
+					gridRow: "4/5",
+					gridColumnStart: "3",
+					display: "flex",
+					flexDirection: "column",
+				}}
+			>
 				<table>
 					<thead>
 						<tr>
@@ -119,7 +129,14 @@ const Skills = (props) => {
 			<br />
 			<br />
 			<br />
-			<ContentContainer style={{ gridRow: "10/11", gridColumnStart: "3" }}>
+			<ContentContainer
+				style={{
+					gridRow: "10/11",
+					gridColumnStart: "3",
+					display: "flex",
+					flexDirection: "column",
+				}}
+			>
 				<table>
 					<thead>
 						<tr>

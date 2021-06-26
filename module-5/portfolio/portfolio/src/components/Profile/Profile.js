@@ -1,46 +1,31 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useContext } from "react"
 
 import {
 	ContentContainer,
 	ImageContainerRound,
 	ProfileImage,
 	SocialChip,
+	LinkContainer,
+	ToolTip,
 } from "../StyledComponents"
 import SectionContainer from "../SectionContainer"
 import Marcus from "./img/marcus_profile_pic.svg"
 import GitHub from "./img/GitHub-Mark-64px.svg"
 import GitHubLight from "./img/GitHub-Mark-Light-64px.png"
 import LinkedIn from "./img/LI-In-Bug.png"
-import { Link } from "react-router-dom"
 import { Context } from "../../context/context"
 
 const Profile = (props) => {
-	const { themeState, setThemeState } = useContext(Context)
-	const handleScroll = () => {
-		console.log("scrolling")
-	}
+	const { themeState } = useContext(Context)
 
 	return (
-		<SectionContainer heading="About Me" id="about">
-			<SocialChip
-				style={{ gridRowStart: "3", gridColumnStart: "2" }}
-				className="linkedIn"
-				href="https://www.linkedin.com/in/marcusradder/"
-			>
-				<img src={`${LinkedIn}`} style={{ height: "48px", margin: "auto" }} />
-			</SocialChip>
-			<SocialChip
-				style={{ gridRowStart: "3", gridColumnStart: "3" }}
-				href="https://github.com/maradder"
-				className="github"
-			>
-				<img
-					src={`${themeState ? GitHubLight : GitHub}`}
-					alt="GitHub"
-					style={{ height: "48px", margin: "auto" }}
-				/>
-			</SocialChip>
-			<ContentContainer gridcolumnstart={4} gridrowstart={4}>
+		<SectionContainer
+			heading="About Me"
+			id="about"
+			className="sectionContainer"
+			style={{ flexDirection: "row" }}
+		>
+			<ContentContainer style={{ marginBottom: "75px" }}>
 				<p style={{ width: "400px", marginBottom: "48px" }}>
 					Quis elit fugiat consequat officia labore proident sint cillum minim
 					nisi officia. Consequat nostrud non minim occaecat pariatur. Veniam
@@ -52,6 +37,30 @@ const Profile = (props) => {
 					<ProfileImage src={`${Marcus}`} />
 				</ImageContainerRound>
 			</ContentContainer>
+			<LinkContainer>
+				<ToolTip content={<p className="gold">Connect with me on LinkedIn</p>}>
+					<SocialChip
+						className="linkedIn"
+						href="https://www.linkedin.com/in/marcusradder/"
+					>
+						<img
+							src={`${LinkedIn}`}
+							style={{ height: "48px", margin: "auto" }}
+							alt="LinkedIn"
+						/>
+					</SocialChip>
+				</ToolTip>
+				<ToolTip content={<p>See my code on GitHub</p>}>
+					<SocialChip href="https://github.com/maradder" className="github">
+						<img
+							// src={`${themeState ? GitHubLight : GitHub}`}
+							src={GitHubLight}
+							alt="GitHub"
+							style={{ height: "48px", margin: "auto" }}
+						/>
+					</SocialChip>
+				</ToolTip>
+			</LinkContainer>
 		</SectionContainer>
 	)
 }
