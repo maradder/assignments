@@ -3,7 +3,7 @@ import BountyCard from "./BountyCard"
 import { BountyList } from "./StyledComponents"
 import { Context } from "../context/context"
 
-const Bounties = (props) => {
+const Bounties = props => {
 	const { bountyList, getBounties } = useContext(Context)
 
 	useEffect(() => {
@@ -13,7 +13,12 @@ const Bounties = (props) => {
 		<BountyList>
 			{bountyList.map((bounty, index) => {
 				return (
-					<BountyCard info={bounty} index={index}>
+					<BountyCard
+						info={bounty}
+						key={bounty._id}
+						tag={bounty._id}
+						index={index}
+					>
 						{index}
 					</BountyCard>
 				)

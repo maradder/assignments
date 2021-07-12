@@ -12,9 +12,9 @@ import {
 import { Context } from "../context/context"
 import axios from "axios"
 
-const BountyCard = (props) => {
+const BountyCard = props => {
 	const bounty = props.info
-	const bountyIndex = props.index
+	const bountyId = props.tag
 	const initBounty = {
 		name: bounty.name,
 		isLiving: bounty.isLiving,
@@ -22,45 +22,42 @@ const BountyCard = (props) => {
 		type: bounty.type,
 		_id: bounty._id,
 	}
+
 	const [isEditMode, setIsEditMode] = useState(false)
-	const { bountyList, setBountyList, getBounties } = useContext(Context)
+	const { bountyList, setBountyList } = useContext(Context)
 	const [editedBounty, setEditedBounty] = useState(initBounty)
 
-	const handleToggle = () => setIsEditMode((isEditMode) => !isEditMode)
+	const handleToggle = () => setIsEditMode(isEditMode => !isEditMode)
 
-	const handleDelete = () => {
-		const newList = bountyList.filter(
-			(bounty, index) => bounty[index] === bounty[bountyIndex]
-		)
-		console.log(newList)
+	const handleDelete = e => {
+		e.preventDefault()
+		const deleteId = e.target.parentNode.parentNode.getAttribute("data-id")
+		console.log(`Delete ID = ${props.tag}`)
+		axios.delete(`/bounties/${deleteId}`).then(res => {
+			console.log(res.data)
+		})
+		const newList = bountyList.filter(bounty => bounty._id !== bountyId)
 		setBountyList(newList)
-		axios
-			.delete(`/bounties/${bounty._id}`)
-			.then((res) => {
-				console.log(res.data)
-			})
-			.catch((err) => console.log(err))
-		return bountyList
 	}
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		const { name, value } = e.target
-		setEditedBounty((prevState) => ({
+		setEditedBounty(prevState => ({
 			...prevState,
 			[name]: value,
 		}))
 	}
 
 	const handleBlur = () => {
-		console.log(editedBounty._id)
+		return
 	}
 
 	const handleFocus = () => {
-		console.log(editedBounty._id)
+		return
 	}
 
 	const handleToggleIsLiving = () =>
-		setEditedBounty((prevState) => ({
+		setEditedBounty(prevState => ({
 			...prevState,
 			isLiving: prevState.isLiving === true ? false : true,
 		}))
@@ -68,15 +65,15 @@ const BountyCard = (props) => {
 	const putBounty = () => {
 		axios
 			.put(`/bounties/${editedBounty._id}`, editedBounty)
-			.then((res) => {
+			.then(res => {
 				console.log(res)
 			})
-			.catch((err) => console.log(err))
+			.catch(err => console.log(err))
 		return handleToggle()
 	}
 
 	return (
-		<Card>
+		<Card data-id={props["data-id"]}>
 			<CardOverlay />
 			{isEditMode ? (
 				<CardContent>
@@ -138,7 +135,10 @@ const BountyCard = (props) => {
 									justifyContent: "space-between",
 								}}
 							>
-								<EditButton type="button" onClick={handleToggle}>
+								<EditButton
+									type="button"
+									onClick={handleToggle}
+								>
 									Cancel
 								</EditButton>
 								<SaveButton type="button" onClick={putBounty}>
