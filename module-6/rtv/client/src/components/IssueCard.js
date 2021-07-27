@@ -3,6 +3,7 @@ import { UserContext } from "../context/UserProvider"
 import { IssueContext } from "../context/IssueProvider"
 import CommentSection from "./CommentSection"
 import VoteSection from "./VoteSection"
+import content from '../content/content'
 import {
     Container,
     AddOwnCommentButton,
@@ -16,8 +17,9 @@ import {
 } from "./StyledComponents"
 
 const IssueCard = props => {
+    const CONTENT = content.issueCard
     const { user } = useContext( UserContext )
-    const { deleteIssue, updateIssue } = useContext( IssueContext )
+    const { deleteIssue, updateIssue, } = useContext( IssueContext )
     const issue = props.issue
     const commentArray = props.commentArray
     const [showCommentField, setShowCommentField] = useState( false )
@@ -79,19 +81,19 @@ const IssueCard = props => {
                         onClick={() => {
                             setShowCommentField( !showCommentField )
                         }}>
-                        Hide Comments
+                        {CONTENT.hideCommentsButton}
                     </ActionButton>
                 ) : (
                     <ActionButton
                         onClick={() => setShowCommentField( !showCommentField )}>
-                        Show Comments
+                        {CONTENT.showCommentsButton}
                     </ActionButton>
                 ) )}
             {user._id === issue.user && (
                 <UserButtonsWrapper>
                     <DeleteOwnIssueButton
                         onClick={() => deleteIssue( issue._id )}>
-                        Delete
+                        {CONTENT.deleteButtonText}
                     </DeleteOwnIssueButton>
 
                     {showCommentField ? (
@@ -99,29 +101,29 @@ const IssueCard = props => {
                             onClick={() => {
                                 setShowCommentField( !showCommentField )
                             }}>
-                            Hide Comments
+                            {CONTENT.hideCommentsButton}
                         </AddOwnCommentButton>
                     ) : editMode ? (
                         <AddOwnCommentButton
                             onClick={saveEdits}>
-                            Save Edits
+                            {CONTENT.saveEditsButtonText}
                         </AddOwnCommentButton>
                     ) : (
                         <AddOwnCommentButton
                             onClick={() =>
                                 setShowCommentField( !showCommentField )
                             }>
-                            Show Comments
+                            {CONTENT.showCommentsButton}
                         </AddOwnCommentButton>
                     )}
 
                     {editMode ? (
                         <EditOwnIssueButton onClick={toggleEditMode}>
-                            Cancel Edits
+                            {CONTENT.cancelEditsButtonText}
                         </EditOwnIssueButton>
                     ) : (
                         <EditOwnIssueButton onClick={cancelEdits}>
-                            Edit
+                            {CONTENT.editButtonText}
                         </EditOwnIssueButton>
                     )}
                 </UserButtonsWrapper>

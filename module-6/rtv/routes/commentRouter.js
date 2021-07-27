@@ -32,9 +32,19 @@ commentRouter.post( "/", ( req, res, next ) => {
 //     const
 // } )
 
-// // Delete Comment
-// commentRouter.delete( "/:commentId", ( req, res, next ) => {
-//     const
-// } )
+// Delete Comment
+commentRouter.delete( "/:commentId", ( req, res, next ) => {
+    Comment.findByIdAndDelete(
+        { _id: req.params.commentId },
+        ( err, deletedComment ) => {
+            if ( err )
+            {
+                res.status( 500 )
+                return next( err )
+            }
+            res.status( 201 ).send( `Successfully deleted comment: ${ commentId }` )
+        }
+    )
+} )
 
 module.exports = commentRouter

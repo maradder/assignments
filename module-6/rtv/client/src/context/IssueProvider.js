@@ -16,6 +16,7 @@ function IssueContextProvider( props ) {
     //                                                        // 
     //                                                        // 
 
+
     // Construct axios instance that will take the token along on each request
     const userAxios = axios.create()
     userAxios.interceptors.request.use( config => {
@@ -83,6 +84,16 @@ function IssueContextProvider( props ) {
 
     // DELETE POST CREATED BY USER ------> Working on the frontend
     function deleteIssue( issueId ) {
+        const commentsLinkedToIssue = allComments.filter( comment => comment.issueId === issueId )
+        commentsLinkedToIssue.map( comment => {
+            console.log( comment._id )
+            userAxios.delete( `/api/comments/${ comment._id }` )
+                .then( res => console.log( res.data ) )
+            // : console.log( "Not the comment you we're looking for" )
+        }
+        )
+
+
         userAxios.delete( `/api/issues/${ issueId }` ).then( res => console.log( res ) )
         const remainingIssues = issues.filter(
             filteredIssue => filteredIssue._id !== issueId
@@ -125,7 +136,7 @@ function IssueContextProvider( props ) {
                 } ) )
             }
             )
-            .catch( err => console.log( err.response.data.errMsg ) )
+            .catch( err => alert( err.response.data.errMsg ) )
     }
 
     // DOWNVOTE POST CREATED BY OTHER USER ------> Working on the frontend
@@ -153,7 +164,7 @@ function IssueContextProvider( props ) {
                 // )
                 console.log( returnedVotedIssue.issue )
             } )
-            .catch( err => console.log( err.response.data.errMsg ) )
+            .catch( err => alert( err.response.data.errMsg ) )
     }
 
 
@@ -189,7 +200,7 @@ function IssueContextProvider( props ) {
                 } ) )
             }
             )
-            .catch( err => console.log( err.response.data.errMsg ) )
+            .catch( err => alert( err.response.data.errMsg ) )
     }
 
 
@@ -222,7 +233,7 @@ function IssueContextProvider( props ) {
                 } ) )
             }
             )
-            .catch( err => console.log( err.response.data.errMsg ) )
+            .catch( err => alert( err.response.data.errMsg ) )
     }
 
     // TEST TO SEE IF THE USER HAS ALREADY VOTED ON THE ISSUE ------> Working on the frontend

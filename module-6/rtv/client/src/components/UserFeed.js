@@ -1,11 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { UserContext } from '../context/UserProvider';
-import { IssuesMain, RTV, UserFeedContainer, UserFeedSubContainer } from "../components/StyledComponents"
+import React, { useState, useEffect, useContext } from "react"
+import { UserContext } from "../context/UserProvider"
+import {
+    IssuesMain,
+    RTV,
+    UserFeedContainer,
+    UserFeedSubContainer,
+} from "../components/StyledComponents"
+import content from "../content/content"
 
-import Issues from './Issues';
-import NewIssue from './NewIssue';
+import Issues from "./Issues"
+import NewIssue from "./NewIssue"
 
 const UserFeed = props => {
+    const CONTENT = content.userFeed
     const { user, issues } = useContext( UserContext )
     const [issuesWillMount, setIssuesWillMount] = useState( false )
     const [showIssues, setShowIssues] = useState( false )
@@ -15,12 +22,24 @@ const UserFeed = props => {
     }, [issues] )
     return (
         <UserFeedContainer>
-            <UserFeedSubContainer style={{}}>
-
+            <UserFeedSubContainer >
                 <NewIssue />
             </UserFeedSubContainer>
             <UserFeedSubContainer>
-                {issuesWillMount ? <Issues /> : <RTV style={{ right: "17vw" }} ><h6 style={{ textTransform: "capitalize", textAlign: "left" }}>{user.username},</h6>Rock the Vote</RTV>}
+                {user.token ? (
+                    <Issues />
+                ) : (
+                    <RTV>
+                        <h6
+                            style={{
+                                textTransform: "capitalize",
+                                textAlign: "left",
+                            }}>
+                            {user.username},
+                        </h6>
+                        {CONTENT.rtvText}
+                    </RTV>
+                )}
             </UserFeedSubContainer>
         </UserFeedContainer>
     )

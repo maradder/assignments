@@ -1,42 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components"
 import { Link } from "react-router-dom"
 
-const darkTheme = {
-	bodyColor:
-		"background-image: linear-gradient(to top, #09203f 0%, #537895 100%);",
-	// bodyColor: "#333745",
-	containerColor: "#333745",
-	containerWrapperColor: "#EEF5DB",
-	primaryTextColor: "#333745",
-	altTextColor: "#EEF5DB",
-	alertTextColor: "#FE5F55",
-	actionTextColor: "#31AF4B",
-	alertButtonColor: "#FE8F88",
-	alertButtonHover: "#FE5F55",
-	actionButtonColor: "#C5EBCC",
-	actionButtonHover: "#31AF4B",
-	whiteColor: "#F6EEEE",
-}
-
-const lightTheme = {
-	bodyColor:
-		"background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);",
-	// bodyColor: "#F6EEEE",
-	containerColor: "#333745",
-	containerWrapperColor: "#33374510",
-	primaryTextColor: "#333745",
-	altTextColor: "#EEF5DB",
-	alertTextColor: "#FE5F55",
-	actionTextColor: "#31AF4B",
-	alertButtonColor: "#FE8F88",
-	alertButtonHover: "#FE5F55",
-	actionButtonColor: "#C5EBCC",
-	actionButtonHover: "#31AF4B",
-	whiteColor: "#F6EEEE",
-}
-
-const currentTheme = darkTheme
-
 // Global Style
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
@@ -48,37 +12,47 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
+	max-width: 100vw;
     font-family: 'Roboto', sans-serif;
     align-items: center;
     justify-content: center;
-    ${ currentTheme.bodyColor };
+    ${ ( { theme } ) => theme.bodyColor };
     min-height: 100vh;
     max-height: fit-content;
+}
+
+#root {
+	min-width: fit-content;
 }
 `
 
 // Text
 const ActionText = styled( Link )`
-	color: ${ currentTheme.actionTextColor };
+	color: ${ ( { theme } ) => theme.actionTextColor };
 `
 
 const AlertText = styled.p`
-	color: ${ currentTheme.alertTextColor };
+	color: ${ ( { theme } ) => theme.alertTextColor };
 `
 
 const HeaderContainer = styled.header`
-	position: sticky;
-	top: -45px;
 	height: 45px;
 	width: 100vw;
 	padding: 4px;
-	margin-bottom: 150px;
-	border-bottom: 1px solid ${ currentTheme.actionButtonColor };
-	background-color: ${ currentTheme.containerWrapperColor };
+	border-bottom: 1px solid ${ ( { theme } ) => theme.actionButtonColor };
+	background-color: ${ ( { theme } ) => theme.containerColor };
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	/* background-color: yellow; */
+
+	.div1 {
+		min-width: fit-content;
+		width: 10vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
 	.div2 {
 		display: flex;
@@ -87,10 +61,73 @@ const HeaderContainer = styled.header`
 		width: 40vw;
 	}
 
+	.div3 {
+		min-width: fit-content;
+		width: 50vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	i {
+		margin: 0 0 0 16px;
+		font-size: 32px;
+	}
+
+	i:hover {
+		cursor: pointer;
+	}
+
+	.fa-sun {
+		color: ${ ( { theme } ) => theme.sun };
+	}
+
+	.fa-moon {
+		color: ${ ( { theme } ) => theme.moon };
+	}
+
+	.fa-dewpoint {
+		color: ${ ( { theme } ) => theme.melon };
+	}
+
+	.fa-tree-palm {
+		color: ${ ( { theme } ) => theme.palm };
+	}
+
+	@media screen and (max-width: 1000px) {
+		margin-bottom: 75px;
+	}
 `
+
+const getWidth = document.addEventListener( "resize", () => window.innerWidth )
+// const getHeight = document.addEventListener( "resize", () => window.innerHeight )
+const halfway = getWidth / 2 - 200
+const midway = window.innerHeight / 2 - 300
 
 /* Main */
 const Main = styled.main`
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	margin: unset;
+	padding: 75px 25px;
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	justify-content: center;
+	border-radius: 18px;
+	background-color: ${ ( { theme } ) => theme.containerWrapperColor };
+	/* background-color: pink; */
+	box-shadow: 12px 9px 12px #121212;
+`
+
+const AuthMain = styled( Main )`
+	position: initial;
+	margin: ${ midway }px auto;
+`
+
+const NewIssueMain = styled( Main )`
+	position: initial;
 	display: flex;
 	flex-direction: column;
 	width: 400px;
@@ -99,9 +136,11 @@ const Main = styled.main`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 18px;
-	background-color: ${ currentTheme.containerWrapperColor };
-	box-shadow: 12px 9px 12px #121212;
+
+	@media screen and (min-width: 1000) {
+		margin-top: 15vh	;
+
+	}
 `
 
 const IssuesMain = styled( Main )`
@@ -110,18 +149,34 @@ const IssuesMain = styled( Main )`
 	flex-direction: column;
 	background-color: transparent;
 	box-shadow: none;
+	margin: 0 auto;
+
+	/* @media screen and (min-width: 1000px) {
+		position: initial;
+	} */
 `
 
 const RTV = styled.h1`
 	font-family: "Yellowtail", cursive;
-	position: fixed;
-	top: 30vh;
-	right: 20vw;
+	/* position: fixed;
+	inset: 30vh 20vw auto auto; */
+	/* top: 30vh; */
+	/* right: 20vw; */
 	transform: rotate(-2deg);
 	font-size: 128px;
-	color: ${ currentTheme.altTextColor };
-	text-shadow: 12px 9px 12px #121212;
+	margin: auto 0;
+	color: ${ ( { theme } ) => theme.containerColor };
+	text-shadow: 12px 9px 12px ${ ( { theme } ) => theme.containerWrapperColor };
 	user-select: none;
+
+	@media screen and (max-width: 700px) {
+		font-size: 96px;
+
+	}
+
+	/* @media screen and (max-width: 1475px) {
+		inset: 5vh auto;
+	} */
 `
 
 /* Buttons */
@@ -136,13 +191,13 @@ const Button = styled.button`
 `
 
 const ActionButton = styled( Button )`
-	background-color: ${ currentTheme.actionButtonColor };
+	background-color: ${ ( { theme } ) => theme.actionButtonColor };
 
 	:hover {
 		background-color: ${ props =>
 		props.disabled
-			? currentTheme.actionButtonColor
-			: currentTheme.actionButtonHover };
+			? ( { theme } ) => theme.actionButtonColor
+			: ( { theme } ) => theme.actionButtonHover };
 		outline: none;
 	}
 `
@@ -151,29 +206,29 @@ const DeleteOwnIssueButton = styled( Button )`
 	width: 33.33333%;
 	border-radius: 18px 1px 1px 74px;
 	background-color: transparent;
-	color: ${ currentTheme.whiteColor };
-	/* border: 1px solid ${ currentTheme.whiteColor }; */
+	color: ${ ( { theme } ) => theme.whiteColor };
+	/* border: 1px solid ${ ( { theme } ) => theme.whiteColor }; */
 
 	:hover {
-		background-color: ${ currentTheme.alertTextColor };
-		color: ${ currentTheme.primaryTextColor };
+		background-color: ${ ( { theme } ) => theme.alertTextColor };
+		color: ${ ( { theme } ) => theme.primaryTextColor };
 	}
 `
 const AddOwnCommentButton = styled( ActionButton )`
 	width: 33.33333%;
 	border-radius: 1px;
-	/* border: 1px solid ${ currentTheme.whiteColor }; */
+	/* border: 1px solid ${ ( { theme } ) => theme.whiteColor }; */
 `
 const EditOwnIssueButton = styled( Button )`
 	width: 33.33333%;
 	border-radius: 1px 57px 17px 1px;
 	background-color: transparent;
-	color: ${ currentTheme.whiteColor };
-	/* border: 1px solid ${ currentTheme.whiteColor }; */
+	color: ${ ( { theme } ) => theme.whiteColor };
+	/* border: 1px solid ${ ( { theme } ) => theme.whiteColor }; */
 
 	:hover {
 		background-color: #e8b828;
-		color: ${ currentTheme.primaryTextColor };
+		color: ${ ( { theme } ) => theme.primaryTextColor };
 	}
 `
 
@@ -189,6 +244,11 @@ const SmallButton = styled.button`
 	width: 91px;
 	height: 32px;
 	border-radius: 18px 57px 17px 74px;
+	padding: 0 0 0 24px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 
 	:hover {
 		background-color: #727272;
@@ -210,8 +270,9 @@ const Container = styled.div`
 	align-items: center;
 	flex-direction: column;
 	border-radius: 18px 57px 17px 74px;
-	background-color: ${ currentTheme.containerColor };
-	color: ${ currentTheme.whiteColor };
+	background-color: ${ ( { theme } ) => theme.containerColor };
+	color: ${ ( { theme } ) => theme.whiteColor };
+	box-shadow: 12px 9px 12px #121212;
 
 	h1 {
 		border-bottom: 1px solid white;
@@ -221,12 +282,13 @@ const Container = styled.div`
 `
 
 const FormContainer = styled.form`
+	position: initial;
 	width: 350px;
 	height: fit-content;
 	padding: 24px;
 	border-radius: 18px 57px 17px 74px;
 
-	background-color: ${ currentTheme.containerColor };
+	background-color: ${ ( { theme } ) => theme.containerColor };
 `
 
 const VoteContainer = styled.div`
@@ -277,8 +339,11 @@ const IssueContainer = styled.div`
 const UserFeedContainer = styled.div`
 	display: flex;
 	flex-direction: row;
+	min-width: fit-content;
 	width: 100vw;
+	min-height:100%;
 	justify-content: space-between;
+	/* background-color: honeydew; */
 
 	@media screen and (max-width: 1000px) {
 		flex-direction: column;
@@ -291,9 +356,19 @@ const UserFeedSubContainer = styled.div`
 	/* position: fixed; */
 	display: flex;
 	flex-direction: column;
-	width: 50vw;
-	margin: 0 4vw auto 4vw;
+	min-height: fit-content;
+	width: fit-content;
+	min-height: fit-content;
+	height: 100vh;
+	margin: auto;
 	align-items: center;
+	/* background-color: peachpuff; */
+
+	@media screen and (max-width: 1000px) {
+		flex-direction: column-reverse;
+		align-items: center;
+		margin: auto;
+	}
 `
 
 const CommentContainer = styled.div`
@@ -315,7 +390,8 @@ const CommentContentContainer = styled.div`
 	overflow-y: scroll;
 	padding: 16px;
 	margin: 16px 0 16px 0;
-	background-color: #eef5db;
+	background-color: ${ ( { theme } ) => theme.altAccentColor };
+	/* background-color: #eef5db; */
 `
 const CommentCard = styled.div`
 	border: 1px solid white;
@@ -323,13 +399,13 @@ const CommentCard = styled.div`
 	width: 100%;
 	padding: 16px;
 	margin: 16px 0 16px 0;
-	background-color: #333745;
+	background-color: ${ ( { theme } ) => theme.containerColor };
 	text-transform: capitalize;
 `
 
 /* Inputs and Labels */
 const Label = styled.label`
-	color: ${ currentTheme.whiteColor };
+	color: ${ ( { theme } ) => theme.whiteColor };
 `
 
 const Input = styled.input`
@@ -369,6 +445,13 @@ const InputPair = styled.div`
 	margin-bottom: 16px;
 `
 
+const TogglerDiv = styled.div`
+	min-height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`
+
 export {
 	GlobalStyle,
 	ActionText,
@@ -398,4 +481,7 @@ export {
 	CommentContentContainer,
 	UserFeedContainer,
 	UserFeedSubContainer,
+	TogglerDiv,
+	AuthMain,
+	NewIssueMain,
 }

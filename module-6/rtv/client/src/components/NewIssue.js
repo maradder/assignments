@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { UserContext } from "../context/UserProvider"
 import { IssueContext } from "../context/IssueProvider"
+import content from "../content/content"
 import {
     Main,
     FormContainer,
@@ -9,9 +10,11 @@ import {
     InputTextArea,
     InputPair,
     ActionButton,
+    NewIssueMain,
 } from "./StyledComponents"
 
 const NewIssue = props => {
+    const CONTENT = content.newIssue
     const { ...userState } = useContext( UserContext )
     const { addIssue, issueAdded } = useContext( IssueContext )
     const initNewIssue = {
@@ -43,11 +46,11 @@ const NewIssue = props => {
     }, [issueAdded] )
 
     return (
-        <Main>
+        <NewIssueMain>
             {props.children}
             <FormContainer onSubmit={handleSubmit}>
                 <InputPair>
-                    <Label htmlFor="issue">What's the issue?</Label>
+                    <Label htmlFor="issue">{CONTENT.newIssueGreeting}</Label>
                     <Input
                         name="issue"
                         type="text"
@@ -68,10 +71,10 @@ const NewIssue = props => {
                     />
                 </InputPair>
                 <ActionButton type="button" onClick={handleSubmit}>
-                    Add Issue
+                    {CONTENT.addIssueButtonText}
                 </ActionButton>
             </FormContainer>
-        </Main>
+        </NewIssueMain>
     )
 }
 

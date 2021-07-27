@@ -24,7 +24,7 @@ const VoteSection = props => {
                     className="fal fa-thumbs-up"
                     onClick={() => userUpvote( issue._id )}></i>
             </ThumbContainer>
-            {props.innercontent}
+            {user.errMsg === "" ? props.innercontent : <p>{user.errMsg}</p>}
             <ThumbContainer>
                 <p>{issue.downVotes}</p>
                 <i

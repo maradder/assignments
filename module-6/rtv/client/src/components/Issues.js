@@ -13,7 +13,9 @@ const Issues = props => {
         return allComments.filter( comment => comment.issueId === obj )
     }
     const renderIssues = () => {
-        const results = issues.map( ( issue, index ) => {
+        const sortableIssues = issues
+        // sortableIssues.sort( ( a, b ) => a.upVotes - b.upVotes )
+        const results = sortableIssues.map( ( issue, index ) => {
             const commentsThisIssue = getComments( issue._id )
             console.log( commentsThisIssue )
             return (

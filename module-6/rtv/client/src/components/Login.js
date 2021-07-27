@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react"
 import { Redirect } from "react-router"
+import content from "../content/content"
 import {
     FormContainer,
     Main,
@@ -7,16 +8,17 @@ import {
     InputPair,
     Label,
     ActionButton,
+    AuthMain,
     ActionText,
 } from "./StyledComponents"
 import { UserContext } from "../context/UserProvider"
 // import { fakeAuth } from './ProtectedRoute';
 
 const Login = props => {
+    const CONTENT = content.authentication.login
     const { credentials, setCredentials, login, errMsg, resetAuthErr } =
         useContext( UserContext )
     const [redirectToReferrer, setRedirectToReferrer] = useState( false )
-
     const handleChange = e => {
         const { name, value } = e.target
         setCredentials( prevState => ( {
@@ -30,38 +32,50 @@ const Login = props => {
     }, [] )
 
     return (
-        <Main>
-            <h1>Welcome Back!</h1>
+        <AuthMain>
+            <h1>{CONTENT.loginGreeting}</h1>
             <FormContainer onSubmit={login}>
                 <InputPair>
-                    <Label htmlFor="">Username</Label>
+                    <Label htmlFor="">
+                        {CONTENT.usernameLabel}
+                    </Label>
                     <Input
                         type="text"
                         name="username"
-                        placeholder="Username"
+                        placeholder={
+                            CONTENT.usernamePlaceholder
+                        }
                         value={credentials.username}
                         onChange={handleChange}
                     />
                 </InputPair>
                 <InputPair>
-                    <Label htmlFor="">Password</Label>
+                    <Label htmlFor="">
+                        {CONTENT.passwordLabel}
+                    </Label>
                     <Input
                         type="text"
                         name="password"
-                        placeholder="Password"
+                        placeholder={
+                            CONTENT.passwordPlaceholder
+                        }
                         value={credentials.password}
                         onChange={handleChange}
                     />
                 </InputPair>
-                <ActionButton>Login</ActionButton>
+                <ActionButton>
+                    {CONTENT.loginButtonText}
+                </ActionButton>
                 <p style={{ color: "red", textAlign: "right" }}>{errMsg}</p>
             </FormContainer>
             {/* <p>Forgot username or password</p> */}
             <p>
-                Don’t have an account?{" "}
-                <ActionText to="signup">Signup!</ActionText>
+                {CONTENT.registrationPrompt}{" "}
+                <ActionText to="signup">
+                    {CONTENT.registrationLinkText}
+                </ActionText>
             </p>
-        </Main>
+        </AuthMain>
     )
 }
 export default Login
